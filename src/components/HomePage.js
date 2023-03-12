@@ -15,7 +15,7 @@ function HomePage() {
           </div>
         </div>
         <div>
-          <img src={homeimg} alt="homeimg" className="h-[35em] rounded-[3em] shadow-2xl drop-shadow-2xl hover:scale-110 duration-500"/>
+          <img src={homeimg} alt="homeimg" className="h-[35em] rounded-[3em] shadow-2xl "/>
         </div>
       </div>
     </div>

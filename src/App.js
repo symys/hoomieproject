@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from "./components/About"
 import CardPage from "./components/CardPage"
-import Footer from './components/Footer';
-import HomePage from './components/HomePage';
+// import Footer from './components/Footer';
+// import HomePage from './components/HomePage';
+import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
 import Product from "./components/Product"
 import Products from "./components/Products"
@@ -14,7 +15,7 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route exact path="/" element={<HomePage/>}/>
+      <Route exact path="/" element={<LandingPage/>}/>
       <Route exact path="/about" element={<About/>}/>
       <Route exact path="/cardpage" element={<CardPage/>}/>
       <Route exact path="/product" element={<Product/>}/>
@@ -22,7 +23,7 @@ function App() {
       <Route exact path="/profile" element={<Profile/>}/>
       <Route exact path="/services" element={<Services/>}/>
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
     </BrowserRouter>
   );
 }
