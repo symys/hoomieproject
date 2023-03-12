@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from "./components/About"
 import CardPage from "./components/CardPage"
-import HomePage from "./components/HomePage"
-import Navbar from "./components/Navbar"
+import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import Navbar from './components/Navbar';
 import Product from "./components/Product"
 import Products from "./components/Products"
 import Profile from "./components/Profile"
@@ -21,6 +22,7 @@ function App() {
       <Route exact path="/profile" element={<Profile/>}/>
       <Route exact path="/services" element={<Services/>}/>
     </Routes>
+    <Footer/>
     </BrowserRouter>
   );
 }
