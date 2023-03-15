@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from './Footer'
 import HomePage from './HomePage'
+import Products from "./Products"
 
 function LandingPage() {
   return (
@@ -10,7 +11,7 @@ function LandingPage() {
         </div>
         <div className='flex flex-col'>
            <HomePage/>
-        <HomePage/> 
+           <Products/>
         </div>
         
     </div>
