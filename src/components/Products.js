@@ -96,7 +96,7 @@ function Products() {
                     class="p-8 object-cover object-center w-[20em] h-[20em] "
                     src={product.img}
                     alt={product.title}
-                  />
+                  /> 
                 </a>
               </div>
               <div class="px-5 pb-5">
