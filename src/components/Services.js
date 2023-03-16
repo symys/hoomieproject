@@ -6,7 +6,7 @@ import pencil from "../images/pencil.png";
 
 function Services() {
   return (
-    <div className="bg-light2 h-full text-dark1 font-montserrat flex lg:flex-row flex-col pl-32 pt-[10em]">
+    <div className="bg-light2 h-full text-dark1 font-montserrat flex lg:flex-row flex-col pl-32 pt-[10em] pb-[5em]">
       <div className="flex flex-col items-center pt-[10em]">
         <div className="text-7xl font-bakbak self-start">Hoomie</div>
         <div className="text-4xl pt-2 self-start">Services</div>
