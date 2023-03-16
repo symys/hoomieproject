@@ -3,6 +3,7 @@ import Footer from './Footer'
 import HomePage from './HomePage'
 import Products from "./Products"
 import Services from "./Services"
+import About from "./About"
 
 function LandingPage() {
   return (
@@ -14,6 +15,7 @@ function LandingPage() {
            <HomePage/>
            <Products/>
            <Services/>
+           <About />
         </div>
         
     </div>
