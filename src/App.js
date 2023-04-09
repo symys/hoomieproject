@@ -4,7 +4,8 @@ import CardPage from "./components/CardPage"
 // import Footer from './components/Footer';
 // import HomePage from './components/HomePage';
 import LandingPage from './components/LandingPage';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
+import Newnav from './components/Newnav';
 import Product from "./components/Product"
 import Products from "./components/Products"
 import Profile from "./components/Profile"
@@ -13,7 +14,7 @@ import Services from "./components/Services"
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+    <Newnav/>
     <Routes>
       <Route exact path="/" element={<LandingPage/>}/>
       <Route exact path="/about" element={<About/>}/>

@@ -6,11 +6,11 @@ import pencil from "../images/pencil.png";
 
 function Services() {
   return (
-    <div className="bg-light2 h-full text-dark1 font-montserrat flex lg:flex-row flex-col pl-32 pt-[10em] pb-[5em]">
-      <div className="flex flex-col items-center pt-[10em]">
-        <div className="text-7xl font-bakbak self-start">Hoomie</div>
-        <div className="text-4xl pt-2 self-start">Services</div>
-        <div className="text-xl mt-16">
+    <div id="services" className="bg-light2 h-full text-dark1 font-montserrat flex lg:flex-row flex-col pl-16 lg:pl-32 pt-[10em] lg:pb-[5em] pb-[1em]">
+      <div className="flex flex-col items-center pt-[5em] lg:pr-0 pr-6">
+        <div className="lg:text-7xl text-3xl font-bakbak self-start">Services</div>
+        {/* <div className="text-4xl pt-2 self-start">Services</div> */}
+        <div className="lg:text-xl text-base lg:mt-16 mt-8">
           Through our services, we strive to provide our customerswith
           satisfaction. At Hoomie, you can get free delivery and installation
           services with a certain minimum purchase, guaranteed best price and
@@ -18,14 +18,14 @@ function Services() {
           process of returning and exchanging goods if the product does not meet
           your expectations.
         </div>
-        <div className="text-xl mt-10">
+        <div className="lg:text-xl text-base mt-10">
           Of course, a modern strategy to elevate our products above competitors
           is to focus on customer pleasure. We strive to provide our clients
           with a positive buying experience because of this.
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 basis-1/2 text-center items-center justify-center m-16 scale-75">
+      <div className="flex flex-col gap-6 basis-1/2 text-center items-center justify-center lg:ml-16 ml-10 mr-16 scale-75">
         <div className="flex lg:flex-row flex-col gap-6 ">
           <div className="bg-dark1 text-light1 p-[2em] object-center">
             <img src={guarantee} alt="guarantee" className="h-[12em]"/>
