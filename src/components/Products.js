@@ -176,7 +176,7 @@ function Products() {
             </Link>
           </div>
         ))}
-        <div className="lg:place-self-center lg:ml-0 ml-[6em] lg:gap-8 gap-4 flex flex-col opacity-80 hover:opacity-100 hover:scale-110  hover:cursor-pointer hover:brightness-125 duration-700">
+        <div className="lg:place-self-center lg:ml-0 ml-[6em] lg:gap-8 gap-4 flex flex-col opacity-80 hover:opacity-100  hover:cursor-pointer hover:brightness-125 duration-700">
           <img src={seemore} alt="seemoreButton" className="lg:w-[8em] w-[4em] lg:ml-24 " />
           <div className="lg:text-xl text-base lg:ml-20 ml-[-2em]">See All Products</div>
         </div>
