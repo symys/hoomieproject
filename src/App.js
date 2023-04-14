@@ -10,6 +10,7 @@ import Product from "./components/Product"
 import Products from "./components/Products"
 import Profile from "./components/Profile"
 import Services from "./components/Services"
+import AllProducts from './components/AllProducts';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route exact path="/products" element={<Products/>}/>
       <Route exact path="/profile" element={<Profile/>}/>
       <Route exact path="/services" element={<Services/>}/>
+      <Route exact path="/allproducts" element={<AllProducts/>}/>
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

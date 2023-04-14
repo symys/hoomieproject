@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom';
 import VIMLE from "../images/lowimages/vintageYellowCouch.jpg";
 import EKOLSUND from "../images/lowimages/blackPlasticChair.jpg";
 import JÄTTEBO from "../images/lowimages/wickerHanmadeWoodenChair.jpg";
@@ -7,86 +7,188 @@ import LANDSKRONA from "../images/lowimages/vintageMiniChairandSofa.jpg";
 import SÖDERHAMN from "../images/lowimages/orangeBoxFoamSofa.jpg";
 import LINNEBÄCK from "../images/lowimages/grayPaddedChair.jpg";
 import NOLMYRA from "../images/lowimages/claretRedSofa.jpg";
-import seemore from "../images/seemoreBtn.png";
-// import EKENÄSET from "../images/lowimages/copperWiredAccentChair.jpg";
-// import PELLO from "../images/lowimages/teakWoodSofa.jpg";
+import FAMMARP from "../images/lowimages/bohemianWickerChair.jpg";
+import PARUP from "../images/lowimages/brownWovenChair.jpg";
+import KIVIK from "../images/lowimages/brownWickerArmchair.jpg";
+import HEMNES from "../images/lowimages/copperWiredAccentChair.jpg";
+import ASVANG from "../images/grayCouch.jpg";
+import AGOTNES from "../images/lowimages/pinksofa.jpg";
+import LÖNSET from "../images/lowimages/teakWoodSofa.jpg";
+import LYCKSELE from "../images/lowimages/greenWoodenSofa.jpg";
+import FRIHETEN from "../images/lowimages/whiteCouch.jpg";
+import SPRUTTIG from "../images/lowimages/whiteSofaWithGreenPillows.jpg";
+import BRIMNES from "../images/lowimages/whitePearlChair.jpg";
+import HAMMARN from "../images/lowimages/whiteWickerChair.jpg";
+import HOLMSUND from "../images/lowimages/yellowArmchair.jpg";
+import NYHAMN from "../images/lowimages/whiteSofa.jpg";
 
-const newproducts = [
-  {
-    name: "Vintage Yellow Couch",
-    img: VIMLE,
-    title: "VIMLE",
-    price: "$92",
-    star: "../images/4.png",
-  },
-  {
-    name: "Black Chair",
-    img: EKOLSUND,
-    title: "GISTAD",
-    price: "$82",
-    star: "../images/3.png",
-  },
-  {
-    name: "Wicker Hanmade Wooden Chair",
-    img: JÄTTEBO,
-    title: "JÄTTEBO",
-    price: "$90",
-    star: "../images/4.png",
-  },
-  {
-    name: "Vintage Mini Chair and Sofa",
-    img: LANDSKRONA,
-    title: "LANDSKRONA",
-    price: "$120",
-    star: "../images/5.png",
-  },
-  {
-    name: "Orange Box Foam Sofa",
-    img: SÖDERHAMN,
-    title: "SÖDERHAMN",
-    price: "$180",
-    star: "../images/5.png",
-  },
-  {
-    name: "Gray Padded Chair",
-    img: LINNEBÄCK,
-    title: "LINNEBÄCK",
-    price: "$100",
-    star: "../images/3.png",
-  },
-  {
-    name: "Claret Red Sofa",
-    img: NOLMYRA,
-    title: "NOLMYRA",
-    price: "$77",
-    star: "../images/4.png",
-  },
-  // {
-  //   name: "Copper Wired Accent Chair",
-  //   img: EKENÄSET,
-  //   title: "EKENÄSET",
-  //   price: "$43",
-  //   star: "../images/4.png",
-  // },
-  // {
-  //   name: "Copper Wired Accent Chair",
-  //   img: PELLO,
-  //   title: "PELLO",
-  //   price: "$43",
-  //   star: "../images/4.png",
-  // },
-];
+const allproducts = [
+    {
+      name: "Vintage Yellow Couch",
+      img: VIMLE,
+      title: "VIMLE",
+      price: "$92",
+      star: "../images/4.png",
+    },
+    {
+      name: "Black Chair",
+      img: EKOLSUND,
+      title: "GISTAD",
+      price: "$82",
+      star: "../images/3.png",
+    },
+    {
+      name: "Wicker Hanmade Wooden Chair",
+      img: JÄTTEBO,
+      title: "JÄTTEBO",
+      price: "$90",
+      star: "../images/4.png",
+    },
+    {
+      name: "Vintage Mini Chair and Sofa",
+      img: LANDSKRONA,
+      title: "LANDSKRONA",
+      price: "$120",
+      star: "../images/5.png",
+    },
+    {
+      name: "Orange Box Foam Sofa",
+      img: SÖDERHAMN,
+      title: "SÖDERHAMN",
+      price: "$180",
+      star: "../images/5.png",
+    },
+    {
+      name: "Gray Padded Chair",
+      img: LINNEBÄCK,
+      title: "LINNEBÄCK",
+      price: "$100",
+      star: "../images/3.png",
+    },
+    {
+      name: "Claret Red Sofa",
+      img: NOLMYRA,
+      title: "NOLMYRA",
+      price: "$77",
+      star: "../images/4.png",
+    },
+    {
+        name: "Bohemian Wicker Chair",
+        img: FAMMARP,
+        title: "FAMMARP",
+        price: "$43",
+        star: "../images/4.png",
+      },
+    {
+      name: "Brown Woven Chair",
+      img: PARUP,
+      title: "PARUP",
+      price: "$43",
+      star: "../images/4.png",
+    },
+    {
+      name: "Bohemian Wicker Arm Chair",
+      img: KIVIK,
+      title: "KIVIK",
+      price: "$43",
+      star: "../images/4.png",
+    },
+    {
+        name: "Copper Wired Accent Chair",
+        img: HEMNES,
+        title: "HEMNES",
+        price: "$43",
+        star: "../images/4.png",
+      },
 
-function Products() {
+
+
+
+
+
+
+
+
+      {
+        name: "Gray Couch",
+        img: ASVANG,
+        title: "ASVANG",
+        price: "$92",
+        star: "../images/4.png",
+      },
+      {
+        name: "Pink Sofa",
+        img: AGOTNES,
+        title: "AGOTNES",
+        price: "$82",
+        star: "../images/3.png",
+      },
+      {
+        name: "Teak Wood Sofa",
+        img: LÖNSET,
+        title: "LÖNSET",
+        price: "$90",
+        star: "../images/4.png",
+      },
+      {
+        name: "Vintage Green Sofa",
+        img: LYCKSELE,
+        title: "LYCKSELE",
+        price: "$120",
+        star: "../images/5.png",
+      },
+      {
+        name: "White Couch",
+        img: FRIHETEN,
+        title: "FRIHETEN",
+        price: "$180",
+        star: "../images/5.png",
+      },
+      {
+        name: "White Sofa with Green Pillows",
+        img: SPRUTTIG,
+        title: "SPRUTTIG",
+        price: "$100",
+        star: "../images/3.png",
+      },
+      {
+        name: "White Pearl Chair",
+        img: BRIMNES,
+        title: "BRIMNES",
+        price: "$77",
+        star: "../images/4.png",
+      },
+      {
+        name: "White Wicker Chair",
+        img: HAMMARN,
+        title: "HAMMARN",
+        price: "$43",
+        star: "../images/4.png",
+      },
+      {
+        name: "Yellow Arm Chair",
+        img: HOLMSUND,
+        title: "HOLMSUND",
+        price: "$43",
+        star: "../images/4.png",
+      },
+      {
+          name: "White Sofa",
+          img: NYHAMN,
+          title: "NYHAMN",
+          price: "$43",
+          star: "../images/4.png",
+        },
+       
+  ];
+
+  
+
+function AllProducts() {
   return (
-    <div className="text-dark1 font-bakbak lg:pl-32 pl-16 bg-light2 h-full pt-32" id="products">
-      <div className="lg:text-4xl text-xl">New Products</div>
-      <div className="lg:text-2xl text-base text-dark2 leading-8 font-montserrat mt-2">
-        Purchase the product listed below as soon as possible before it sells
-        out.
-      </div>
-      <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
-        {newproducts.map((product) => (
+    <div className="flex flex-col mt-[10em] m-[5em]">
+        <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
+        {allproducts.map((product) => (
           <div>
             <Link state={product} to="/product">
               <div class="hover:scale-110  duration-500 hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[15em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -176,13 +278,9 @@ function Products() {
             </Link>
           </div>
         ))}
-        <div className="lg:place-self-center lg:ml-0 ml-[6em] opacity-80 hover:opacity-100  hover:cursor-pointer hover:brightness-125 duration-700">
-         <Link to="/allproducts" className=" lg:gap-8 gap-4 flex flex-col"> <img src={seemore} alt="seemoreButton" className="lg:w-[8em] w-[4em] lg:ml-24 " />
-          <div className="lg:text-xl text-base lg:ml-20 ml-[-2em]">See All Products</div></Link>
-        </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Products;
+export default AllProducts
