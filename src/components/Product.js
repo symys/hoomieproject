@@ -1,9 +1,39 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import LANDSKRONA from "../images/lowimages/vintageMiniChairandSofa.jpg";
 import SÖDERHAMN from "../images/lowimages/orangeBoxFoamSofa.jpg";
 import LINNEBÄCK from "../images/lowimages/grayPaddedChair.jpg";
 import NOLMYRA from "../images/lowimages/claretRedSofa.jpg";
+
+const similarProducts = [
+  {
+    name: "Vintage Mini Chair Sofa",
+    img: LANDSKRONA,
+    title: "LANDSKRONA",
+    price: "$92",
+    star: "../images/4.png",
+  },
+  {
+    name: "Orange Box Foam Sofa",
+    img: SÖDERHAMN,
+    title: "SÖDERHAMN",
+    price: "$82",
+    star: "../images/3.png",
+  },
+  {
+    name: "Gray Padded Chair",
+    img: LINNEBÄCK,
+    title: "LINNEBÄCK",
+    price: "$90",
+    star: "../images/4.png",
+  },
+  {
+    name: "Claret Red Sofa",
+    img: NOLMYRA,
+    title: "NOLMYRA",
+    price: "$120",
+    star: "../images/5.png",
+  },]
 
 function Product() {
   const location = useLocation();
@@ -108,10 +138,8 @@ function Product() {
       <div className="mt-12">
         <div className="lg:text-2xl text-lg font-bold">Customers also viewed</div>
         <div className="flex lg:flex-row flex-col justify-evenly gap-10 pt-10">
-          <div className="object-contain flex  hover:cursor-pointer shadow-2xl "><img src={LANDSKRONA} alt="" className="rounded-[1em]"/></div>
-          <div className="object-contain flex  hover:cursor-pointer shadow-2xl"><img src={LINNEBÄCK} alt="" className="rounded-[1em]"/></div>
-          <div className="object-contain flex hover:cursor-pointer shadow-2xl"><img src={SÖDERHAMN} alt="" className="rounded-[1em]"/></div>
-          <div className="object-contain flex hover:cursor-pointer shadow-2xl"><img src={NOLMYRA} alt="" className="rounded-[1em]"/></div>
+          {similarProducts.map(product => <div className="object-contain flex  hover:cursor-pointer shadow-2xl ">
+          <Link state={product} to="/product"><img src={product.img} alt="" className="rounded-[1em]"/></Link></div>)}
         </div>
       </div>
     </div>
