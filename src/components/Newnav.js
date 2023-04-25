@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import cartIcon from "../images/shopping-cart.png";
 import userIcon from "../images/user.png";
 import enterIcon from "../images/enter.png"
+import logo from "../images/sofa.png"
 
 function Newnav() {
   let Links = [
@@ -15,8 +16,14 @@ function Newnav() {
   return (
     <div className="shadow-md w-screen fixed z-40 top-0 left-0">
       <div className="md:flex bg-white items-center justify-between py-6 md:px-10 px-7">
-        <div className="font-bold text-4xl cursor-pointer flex items-center font-bakbak text-dark1">
-          <a href="/">Hoomie</a>
+        <div className="text-4xl cursor-pointer flex items-center font-bakbak text-[#ca61c9]">
+          <a href="/">
+            <div className="flex flex-row items-center gap-2 hover:brightness-110">
+              <div className="w-14"><img src={logo} alt="logo"/></div>
+            <div>Hoomie</div>
+            </div>
+            
+            </a>
         </div>
         <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
             <ion-icon name={open ? "close-outline" : "menu-outline"}></ion-icon>
