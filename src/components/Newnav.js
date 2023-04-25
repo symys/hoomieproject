@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-// import cartIcon from "../images/shopping-cart.png";
-// import userIcon from "../images/user.png";
+import cartIcon from "../images/shopping-cart.png";
+import userIcon from "../images/user.png";
+import enterIcon from "../images/enter.png"
 
 function Newnav() {
   let Links = [
-    { name: "HOME", link: "/" },
+    // { name: "HOME", link: "/" },
     { name: "PRODUCTS", link: "/#products" },
     { name: "SERVICES", link: "/#services" },
     { name: "ABOUT US", link: "/#about" },
@@ -15,7 +16,7 @@ function Newnav() {
     <div className="shadow-md w-screen fixed z-40 top-0 left-0">
       <div className="md:flex bg-white items-center justify-between py-6 md:px-10 px-7">
         <div className="font-bold text-4xl cursor-pointer flex items-center font-bakbak text-dark1">
-          Hoomie
+          <a href="/">Hoomie</a>
         </div>
         <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
             <ion-icon name={open ? "close-outline" : "menu-outline"}></ion-icon>
@@ -31,13 +32,27 @@ function Newnav() {
               </a>
             </li>
           ))}
-          {/* <div className="md:flex lg:ml-6 lg:gap-6">
-            <img
+          <div className="md:flex lg:ml-6 lg:gap-6 ">
+            <button className="relative">
+              <img
             src={cartIcon}
             alt="cartIcon"
             className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
           />
-          <button className="bg-blue-600 text-white font-montserrat py-2 px-6 rounded md:ml-8 hover:bg-blue-400 duration-500">
+          <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">20</div>
+              </button>
+          <img
+            src={userIcon}
+            alt="cartIcon"
+            className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
+          />
+          <img
+            src={enterIcon}
+            alt="cartIcon"
+            className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
+          />
+          </div>
+          {/* <button className="bg-blue-600 text-white font-montserrat py-2 px-6 rounded md:ml-8 hover:bg-blue-400 duration-500">
             LOGIN or SIGNUP
           </button> 
           <img
