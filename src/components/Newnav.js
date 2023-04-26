@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom"
 import cartIcon from "../images/shopping-cart.png";
 import userIcon from "../images/user.png";
 import enterIcon from "../images/enter.png"
@@ -53,11 +54,11 @@ function Newnav() {
             alt="cartIcon"
             className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
           />
-          <img
+          <Link to="/login"><img
             src={enterIcon}
             alt="cartIcon"
             className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
-          />
+          /></Link>
           </div>
           {/* <button className="bg-blue-600 text-white font-montserrat py-2 px-6 rounded md:ml-8 hover:bg-blue-400 duration-500">
             LOGIN or SIGNUP
