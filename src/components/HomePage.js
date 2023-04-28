@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 // import "swiper/css/coverflow";
@@ -30,7 +30,7 @@ function HomePage() {
           </div>
           <div>
             <button className="lg:text-2xl text-xs font-montserrat bg-dark1 hover:bg-dark2 hover:scale-110 duration-500 text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2">
-              Start to shop now
+              <Link to="/allproducts">Start to shop now</Link>
             </button>
           </div>
         </div>
