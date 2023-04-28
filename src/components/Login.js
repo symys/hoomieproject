@@ -14,7 +14,7 @@ function Login() {
           Log in to your account
         </div>
         <div className="text-lg cursor-pointer underline text-blue-600">
-          <Link to="/register"> Don't have an account?</Link>
+          <Link to="/register"> Don't have an account? </Link>
         </div>
       </div>
       <div className="flex flex-col gap-6 w-[30em] font-montserrat font-bold">
