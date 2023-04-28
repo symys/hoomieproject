@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from "./components/About"
 import CardPage from "./components/CardPage"
 // import Footer from './components/Footer';
