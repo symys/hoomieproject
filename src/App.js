@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import About from "./components/About"
 import CardPage from "./components/CardPage"
 // import Footer from './components/Footer';
@@ -12,6 +12,7 @@ import Profile from "./components/Profile"
 import Services from "./components/Services"
 import AllProducts from './components/AllProducts';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route exact path="/services" element={<Services/>}/>
       <Route exact path="/allproducts" element={<AllProducts/>}/>
       <Route exact path='/login' element={<Login/>} />
+      <Route path="/register" element={<Register />} />
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>
