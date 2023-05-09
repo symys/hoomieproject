@@ -49,11 +49,11 @@ function Newnav() {
           />
           <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">20</div>
               </button>
-          <img
+              <Link to="/register"><img
             src={userIcon}
             alt="cartIcon"
             className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
-          />
+          /></Link>
           <Link to="/login"><img
             src={enterIcon}
             alt="cartIcon"

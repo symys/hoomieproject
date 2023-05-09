@@ -27,7 +27,7 @@ function Login() {
           className="lg:h-[3em] h-[2em] placeholder:tracking-wider placeholder:pl-4 placeholder:text-sm"
         />
         <div className="self-center">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-3 py-2 lg:px-20 px-8 rounded lg:text-xl text-sm tracking-widest ">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-3 py-2 lg:px-20 px-8 rounded lg:text-xl text-sm tracking-widest ">
             Login
           </button>
         </div>
