@@ -26,7 +26,7 @@ function Contact() {
               className="py-3 px-4 block w-full border-2 border-gray-300 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
             />
           </div>
-          <div className="flex lg:flex-row flex-col gap-6">
+          <div className="flex lg:flex-row flex-col gap-6 ">
             <input
               type="text"
               name="hs-email-contacts-1"
