@@ -5,7 +5,7 @@ import logo from "../images/sofa.png";
 function Register() {
   return (
     <div className="text-dark1 font-bakbak bg-light2 h-screen items-center flex flex-col justify-center lg:gap-8 gap-4">
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-10">
       <img src={logo} alt="logo" className="lg:w-[10em] w-[5em] lg:mb-[-2em]" />
       <div className="lg:text-[2em] text-lg text-center text-[#B939B7]">Hoomie</div>
     </div>
