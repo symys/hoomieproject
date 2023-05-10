@@ -11,7 +11,6 @@ function Newnav() {
     { name: "PRODUCTS", link: "/#products" },
     { name: "SERVICES", link: "/#services" },
     { name: "ABOUT US", link: "/#about" },
-    {name: "CONTACT", link:"/contact"}
   ];
 
   const [open, setOpen] = useState(false)
@@ -41,6 +40,7 @@ function Newnav() {
               </a>
             </li>
           ))}
+          <Link to="/contact" className="md:ml-8 md:my-0 my-4"><li  className="text-dark1 hover:text-gray-400 duration-500 lg:text-xl text-sm font-montserrat font-bold">CONTACT</li></Link>
           <div className="md:flex lg:ml-6 lg:gap-6 ">
             <button className="relative">
               <img
