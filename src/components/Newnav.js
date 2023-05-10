@@ -11,6 +11,7 @@ function Newnav() {
     { name: "PRODUCTS", link: "/#products" },
     { name: "SERVICES", link: "/#services" },
     { name: "ABOUT US", link: "/#about" },
+    {name: "CONTACT", link:"/contact"}
   ];
 
   const [open, setOpen] = useState(false)

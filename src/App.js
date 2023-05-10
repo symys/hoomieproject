@@ -14,6 +14,7 @@ import AllProducts from './components/AllProducts';
 import Login from './components/Login';
 import Register from './components/Register';
 import Contact from './components/Contact';
+import ThankYouPage from './components/ThankYouPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route exact path='/login' element={<Login/>} />
       <Route path="/register" element={<Register />} />
       <Route path='/contact' element={<Contact/>} />
+      <Route path='/thankyou' element={<ThankYouPage/>} />
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

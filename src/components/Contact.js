@@ -1,6 +1,12 @@
 import React from "react";
+import { Link} from 'react-router-dom';
+
+const thanksProps="thank you"
 
 function Contact() {
+  
+
+
   return (
     <div className="lg:mt-10 mt-40 items-center justify-center flex flex-col h-screen font-montserrat gap-4 p-2">
       <div className="lg:text-5xl text-3xl font-bold">Contact us</div>
@@ -46,9 +52,9 @@ function Contact() {
           <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows="4" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Please write your message here"></textarea>
           </div>
           <div className="self-center">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-3 py-2 lg:px-20 px-8 rounded lg:text-xl text-sm tracking-widest ">
+          <Link to="/thankyou" state={thanksProps}><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-3 py-2 lg:px-20 px-8 rounded lg:text-xl text-sm tracking-widest">
           Submit
-        </button>
+        </button></Link>
           </div>
         </div>
       </div>
