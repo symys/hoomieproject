@@ -5,8 +5,6 @@ const thanksProps="thank you"
 
 function Contact() {
   
-
-
   return (
     <div className="lg:mt-10 mt-40 items-center justify-center flex flex-col h-screen font-montserrat gap-4 p-2">
       <div className="lg:text-5xl text-3xl font-bold">Contact us</div>
@@ -60,6 +58,6 @@ function Contact() {
       </div>
     </div>
   );
-}
+} 
 
 export default Contact;
