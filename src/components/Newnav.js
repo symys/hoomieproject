@@ -43,11 +43,11 @@ function Newnav() {
           <Link to="/contact" className="md:ml-8 md:my-0 my-4"><li  className="text-dark1 hover:text-gray-400 duration-500 lg:text-xl text-sm font-montserrat font-bold">CONTACT</li></Link>
           <div className="md:flex lg:ml-6 lg:gap-6 ">
             <button className="relative">
-              <img
+            <Link to="/cart"><img
             src={cartIcon}
             alt="cartIcon"
             className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
-          />
+          /></Link>
           <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">20</div>
               </button>
               <Link to="/register"><img

@@ -6,12 +6,12 @@ const thanksProps="thank you"
 function Contact() {
   
   return (
-    <div className="lg:mt-10 mt-40 items-center justify-center flex flex-col h-screen font-montserrat gap-4 p-2">
+    <div className="lg:mt-10 mt-40 items-center justify-center flex flex-col h-screen font-montserrat gap-4 p-2 bg-light2">
       <div className="lg:text-5xl text-3xl font-bold">Contact us</div>
       <div className="lg:text-3xl text-xl font-medium">
         We'd love to talk about how we can help you.
       </div>
-      <div className="border rounded-xl p-4 lg:mt-10 sm:p-6 lg:p-8 dark:border-gray-700 shadow-lg">
+      <div className="border rounded-xl p-4 lg:mt-10 sm:p-6 lg:p-8 dark:border-gray-700 shadow-lg bg-white">
         <div className="text-left lg:text-xl text-base font-medium">Fill in the form</div>
         <div className="gap-6 flex flex-col">
           <div className="flex lg:flex-row flex-col gap-6">

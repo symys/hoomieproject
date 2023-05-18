@@ -186,10 +186,10 @@ const allproducts = [
 
 function AllProducts() {
   return (
-    <div className="flex flex-col mt-[10em] m-[5em]">
+    <div className="flex flex-col pt-[10em] p-[5em] bg-light2">
         <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
-        {allproducts.map((product) => (
-          <div>
+        {allproducts.map((product, index) => (
+          <div key={index}>
             <Link state={product} to="/product">
               <div class="hover:scale-110  duration-500 hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[15em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div className="place-self-center rounded-lg">
