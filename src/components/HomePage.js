@@ -10,9 +10,16 @@ import "swiper/css";
 import VIMLE from "../images/lowimages/orangeBoxFoamSofa.jpg";
 import EKOLSUND from "../images/lowimages/whiteSofaWithGreenPillows.jpg";
 import JÄTTEBO from "../images/lowimages/pinksofa.jpg";
+// import { useSelector } from "react-redux";
+
+
 
 function HomePage() {
   const furnitureImages = [VIMLE, EKOLSUND, JÄTTEBO];
+
+  // const pizza = useSelector(state => state.pizza)
+  // console.log(pizza.toppings)
+ 
 
   return (
     <div className="bg-light2 h-screen text-dark1 font-bakbak ">
