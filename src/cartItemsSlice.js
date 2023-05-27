@@ -238,13 +238,14 @@ export const cartItemsSlice = createSlice({
                 const handleProduct = state.allproducts.filter(product => product.id === action.payload.id)
                 handleProduct[0].orderQuantity = handleProduct[0].orderQuantity + 1;
                 state.cartItems = [...state.cartItems, handleProduct[0]]
+                state.cartItem = state.cartItem + 1
                 console.log(state.cartItems)
             }
             else{
                 for(let i = 0; i < state.cartItems.length; i++){
                     if(state.cartItems[i].id === action.payload.id){
                         state.cartItems[i].orderQuantity = state.cartItems[i].orderQuantity + 1;
-                        
+                        state.cartItem = state.cartItem + 1
                     }
                 }
                 console.log(JSON.parse(JSON.stringify(state.cartItems)))
