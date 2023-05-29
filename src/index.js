@@ -11,7 +11,7 @@ import { persistStore } from "redux-persist";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let persistor = persistStore(store);
 //redux persist localstorage resetlemek için asagidaki yapilir
-// persistor.purge(); 
+persistor.purge(); 
 
 root.render(
   <React.StrictMode>
