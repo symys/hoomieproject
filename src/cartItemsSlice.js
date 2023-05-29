@@ -231,7 +231,7 @@ export const cartItemsSlice = createSlice({
         //     state.toppings = [...state.toppings, action.payload]
         // },
         onAdd: (state, action) => {
-            console.log("onadd")
+            // console.log("onadd")
             const exist = state.cartItems.find((x) => x.id === action.payload.id);
             if(!exist){
                 // action.payload.orderQuantity = action.payload.orderQuantity + 1;
@@ -264,11 +264,15 @@ export const cartItemsSlice = createSlice({
             exist.orderQuantity = exist.orderQuantity - 1;
             state.cartItem = state.cartItem - 1
           }
+          else if(exist.orderQuantity === 0){
+            state.orderQuantity = 0
+          }
         },
         onRemove: (state, action) => {
           const exist = state.cartItems.find((x) => x.id === action.payload.id);
           if(exist.orderQuantity >= 1){
-            state.cartItems = state.cartItems.filter(item => item.id !== exist.id)
+            const newArr = state.cartItems.filter(item => item.id !== exist.id)
+            state.cartItems = newArr
             state.cartItem = state.cartItem - exist.orderQuantity
             exist.orderQuantity = 0
             console.log(exist)
