@@ -20,7 +20,7 @@ function CartPage() {
   window.onload = function() {
     window.scrollTo(0, 0);
   }
-  
+
   const shopBagProducts = useSelector((state) => state.cartItems);
   console.log(shopBagProducts.cartItems);
   return shopBagProducts.cartItem === 0 ? (
