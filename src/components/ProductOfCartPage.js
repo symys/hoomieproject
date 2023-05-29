@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from "react-redux";
-import { onAdd } from "../cartItemsSlice.js";
+import { onAdd, onDelete, onRemove} from "../cartItemsSlice.js";
 
 function ProductOfCartPage({path, quantity, price, product}) {
   const dispatch = useDispatch();
@@ -15,12 +15,13 @@ function ProductOfCartPage({path, quantity, price, product}) {
             <img className='max-w-[10em] rounded-[1em] p-2' src={path} alt="product"/>
             <div className='flex lg:flex-row flex-col lg:gap-[10em] gap-[3em]'>
                  <div className='flex flex-row gap-2 items-center'>
-                <div className=' text-3xl hover:cursor-pointer'><ion-icon name="remove-outline"></ion-icon></div>
+                <div className=' text-3xl hover:cursor-pointer'><ion-icon onClick={() => dispatch(onDelete(product))} name="remove-outline"></ion-icon></div>
                 <div className='text-3xl'>{quantity}</div>
                 <div className="text-3xl  hover:cursor-pointer "><ion-icon onClick={() => dispatch(onAdd(product))}  name="add-outline"></ion-icon></div>
             </div>
             <div className='text-3xl flex items-center'>$ {totalPrice}</div>
-            <div className='text-4xl items-center flex  hover:cursor-pointer '><ion-icon name="trash-outline"></ion-icon></div>
+            <div className='text-4xl items-center flex  hover:cursor-pointer '><ion-icon onClick={() => dispatch(onRemove(product))}
+            name="trash-outline"></ion-icon></div>
             </div>
            
         </div>

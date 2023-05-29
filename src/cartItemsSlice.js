@@ -255,20 +255,29 @@ export const cartItemsSlice = createSlice({
             // state.cartItems = [...state.cartItems, action.payload]
         },
         onDelete: (state, action) => {
-            if(state.cartItem > 0){
-                state.cartItem = state.cartItem - 1;
-                console.log("ondelete")
-                console.log(state.cartItem)
-                
-            }
-            else{
-                alert("there is no product in the cart")
-            }
+          const exist = state.cartItems.find((x) => x.id === action.payload.id);
+          if(exist.orderQuantity === 1){
+            state.cartItems = state.cartItems.filter(item => item.id !== exist.id)
+            state.cartItem = state.cartItem - 1
+          }
+          else if(exist.orderQuantity > 1){
+            exist.orderQuantity = exist.orderQuantity - 1;
+            state.cartItem = state.cartItem - 1
+          }
+        },
+        onRemove: (state, action) => {
+          const exist = state.cartItems.find((x) => x.id === action.payload.id);
+          if(exist.orderQuantity >= 1){
+            state.cartItems = state.cartItems.filter(item => item.id !== exist.id)
+            state.cartItem = state.cartItem - exist.orderQuantity
+            exist.orderQuantity = 0
+            console.log(exist)
+          }
         }
 
     }
 })
 
-export const {onAdd, onDelete} = cartItemsSlice.actions
+export const {onAdd, onDelete, onRemove} = cartItemsSlice.actions
 
 export default cartItemsSlice.reducer
