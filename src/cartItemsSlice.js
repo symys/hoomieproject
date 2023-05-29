@@ -270,13 +270,13 @@ export const cartItemsSlice = createSlice({
         },
         onRemove: (state, action) => {
           const exist = state.cartItems.find((x) => x.id === action.payload.id);
-          if(exist.orderQuantity >= 1){
+          
             const newArr = state.cartItems.filter(item => item.id !== exist.id)
             state.cartItems = newArr
             state.cartItem = state.cartItem - exist.orderQuantity
             exist.orderQuantity = 0
             console.log(exist)
-          }
+          
         }
 
     }
