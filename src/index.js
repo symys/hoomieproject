@@ -10,7 +10,7 @@ import { persistStore } from "redux-persist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let persistor = persistStore(store);
-// persistor.purge(); 
+persistor.purge(); 
 
 root.render(
   <React.StrictMode>
