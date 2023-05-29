@@ -219,6 +219,12 @@ import { onAdd } from "../cartItemsSlice.js";
 //   ];
 
 function AllProducts() {
+  //sadece böyle yaparsam her butona tıkladığımda en yukarı atıyor.
+  // window.scrollTo(0, 0);
+  //onLoad sayesinde sayfa ilk yüklendiğin en üstten başlayacak.
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  }
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cartItems);
   // const cartItems = useSelector(state => state.cartItems)
