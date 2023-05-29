@@ -36,7 +36,7 @@ function HomePage() {
             semi-classical decor for inspiration.
           </div>
           <div>
-            <button className="lg:text-2xl text-xs font-montserrat bg-dark1 hover:bg-dark2 hover:scale-110 duration-500 text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2">
+            <button className="lg:text-2xl text-xl font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent font-montserrat  hover:scale-110 duration-500 text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2">
               <Link to="/allproducts">Start to shop now</Link>
             </button>
           </div>
