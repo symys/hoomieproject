@@ -21,6 +21,7 @@ import HAMMARN from "./images/lowimages/whiteWickerChair.jpg";
 import HOLMSUND from "./images/lowimages/yellowArmchair.jpg";
 import NYHAMN from "./images/lowimages/whiteSofa.jpg";
 
+
 const initialState = {
   allproducts: [
     {

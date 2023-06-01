@@ -7,17 +7,29 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
+import ReduxToastr from "react-redux-toastr";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let persistor = persistStore(store);
 //redux persist localstorage resetlemek için asagidaki yapilir
-//persistor.purge(); 
+//persistor.purge();
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <App />
+        <ReduxToastr
+          timeOut={3000}
+          newestOnTop={false}
+          preventDuplicates
+          position="bottom-right"
+          getState={(state) => state.toastr} // This is the default
+          transitionIn="bounceIn"
+          transitionOut="bounceOut"
+          progressBar
+          closeOnToastrClick={true}
+        />
       </PersistGate>
     </Provider>
   </React.StrictMode>
