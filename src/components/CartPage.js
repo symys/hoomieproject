@@ -16,13 +16,16 @@ const noProductState = (
 );
 
 function CartPage() {
-  //onLoad sayesinde sayfa ilk yüklendiğin en üstten başlayacak.
+  //onLoad sayesinde sayfa ilk yüklendiğinde en üstten başlayacak.
   window.onload = function() {
     window.scrollTo(0, 0);
   }
 
   const shopBagProducts = useSelector((state) => state.cartItems);
+
   console.log(shopBagProducts.cartItems);
+ 
+
   return shopBagProducts.cartItem === 0 ? (
     noProductState
   ) : (
@@ -49,6 +52,16 @@ function CartPage() {
         <div className="basis-1/2 items-center flex flex-col ">
           <div className="text-3xl border-b-2 pb-10 pl-40 pr-40">
             Order Summary
+          </div>
+          <div className="pt-10 gap-5 flex flex-col">
+            <div className="flex lg:flex-row flex-col gap-10">
+              <div className="text-xl uppercase font-black">Total Items in Shopping Bag:</div>
+              <div className="text-xl font-bold">{shopBagProducts.cartItem}</div>
+            </div>
+            <div className="flex lg:flex-row flex-col gap-10">
+              <div className="text-xl uppercase font-black">Total Price:</div>
+              <div className="text-xl font-bold">{shopBagProducts.totalPrice}</div>
+            </div>
           </div>
         </div>
       </div>

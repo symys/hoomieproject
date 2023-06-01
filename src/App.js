@@ -15,6 +15,7 @@ import Register from './components/Register';
 import Contact from './components/Contact';
 import ThankYouPage from './components/ThankYouPage';
 import CartPage from './components/CartPage';
+import OrderPage from './components/OrderPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <Route path='/contact' element={<Contact/>} />
       <Route path='/thankyou' element={<ThankYouPage/>} />
       <Route path='/cart' element={<CartPage />} />
+      <Route path='/order' element={<OrderPage/>} />
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>
