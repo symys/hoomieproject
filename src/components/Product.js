@@ -1,42 +1,53 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import LANDSKRONA from "../images/lowimages/vintageMiniChairandSofa.jpg";
-import SÖDERHAMN from "../images/lowimages/orangeBoxFoamSofa.jpg";
-import LINNEBÄCK from "../images/lowimages/grayPaddedChair.jpg";
-import NOLMYRA from "../images/lowimages/claretRedSofa.jpg";
+// import LANDSKRONA from "../images/lowimages/vintageMiniChairandSofa.jpg";
+// import SÖDERHAMN from "../images/lowimages/orangeBoxFoamSofa.jpg";
+// import LINNEBÄCK from "../images/lowimages/grayPaddedChair.jpg";
+// import NOLMYRA from "../images/lowimages/claretRedSofa.jpg";
+import { toastr } from 'react-redux-toastr';
+import { onAdd } from "../cartItemsSlice.js";
+import { useDispatch, useSelector } from "react-redux";
 
-const similarProducts = [
-  {
-    name: "Vintage Mini Chair Sofa",
-    img: LANDSKRONA,
-    title: "LANDSKRONA",
-    price: "$92",
-    star: "../images/4.png",
-  },
-  {
-    name: "Orange Box Foam Sofa",
-    img: SÖDERHAMN,
-    title: "SÖDERHAMN",
-    price: "$82",
-    star: "../images/3.png",
-  },
-  {
-    name: "Gray Padded Chair",
-    img: LINNEBÄCK,
-    title: "LINNEBÄCK",
-    price: "$90",
-    star: "../images/4.png",
-  },
-  {
-    name: "Claret Red Sofa",
-    img: NOLMYRA,
-    title: "NOLMYRA",
-    price: "$120",
-    star: "../images/5.png",
-  },]
+
+// const similarProducts = [
+//   {
+//     name: "Vintage Mini Chair Sofa",
+//     img: LANDSKRONA,
+//     title: "LANDSKRONA",
+//     price: "$92",
+//     star: "../images/4.png",
+//   },
+//   {
+//     name: "Orange Box Foam Sofa",
+//     img: SÖDERHAMN,
+//     title: "SÖDERHAMN",
+//     price: "$82",
+//     star: "../images/3.png",
+//   },
+//   {
+//     name: "Gray Padded Chair",
+//     img: LINNEBÄCK,
+//     title: "LINNEBÄCK",
+//     price: "$90",
+//     star: "../images/4.png",
+//   },
+//   {
+//     name: "Claret Red Sofa",
+//     img: NOLMYRA,
+//     title: "NOLMYRA",
+//     price: "$120",
+//     star: "../images/5.png",
+//   },]
+
 
 function Product() {
+
+  window.scrollTo(0,0)
+
   const location = useLocation();
+  const products = useSelector((state) => state.cartItems);
+  const dispatch = useDispatch();
+
   const propsData = location.state;
   return (
     <div className="flex flex-col mt-[10em] m-[5em] font-montserrat ">
@@ -127,7 +138,7 @@ function Product() {
           <div className="lg:pt-12 pt-6 flex flex-col gap-1">
             <div className="lg:text-base text-sm">In stock</div>
             <div className="lg:text-base text-sm">2 left for dispatch in 5 working days</div>
-            <button class="bg-black hover:bg-gray-800 text-white lg:text-base text-sm font-bold lg:py-3 py-1 lg:px-24 px-12 mt-4 rounded lg:tracking-widest">
+            <button class="bg-black hover:bg-gray-800 text-white lg:text-base text-sm font-bold lg:py-3 py-1 lg:px-24 px-12 mt-4 rounded lg:tracking-widest" onClick={() => {dispatch(onAdd(propsData)); toastr.success('Product added to cart')}}>
               Add to cart
             </button>
           </div>
@@ -138,7 +149,7 @@ function Product() {
       <div className="mt-12">
         <div className="lg:text-2xl text-lg font-bold">Customers also viewed</div>
         <div className="flex lg:flex-row flex-col justify-evenly gap-10 pt-10">
-          {similarProducts.map(product => <div className="object-contain flex  hover:cursor-pointer shadow-2xl ">
+          {products.allproducts.slice(0,4).map(product => <div className="object-contain flex  hover:cursor-pointer shadow-2xl ">
           <Link state={product} to="/product"><img src={product.img} alt="" className="rounded-[1em]"/></Link></div>)}
         </div>
       </div>
