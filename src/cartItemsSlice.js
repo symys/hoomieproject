@@ -10,7 +10,7 @@ import FAMMARP from "./images/lowimages/bohemianWickerChair.jpg";
 import PARUP from "./images/lowimages/brownWovenChair.jpg";
 import KIVIK from "./images/lowimages/brownWickerArmchair.jpg";
 import HEMNES from "./images/lowimages/copperWiredAccentChair.jpg";
-import ASVANG from "./images/grayCouch.jpg";
+import ASVANG from "./images/lowimages/grayCouch.jpg";
 import AGOTNES from "./images/lowimages/pinksofa.jpg";
 import LÖNSET from "./images/lowimages/teakWoodSofa.jpg";
 import LYCKSELE from "./images/lowimages/greenWoodenSofa.jpg";

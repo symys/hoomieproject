@@ -85,7 +85,7 @@ function Products() {
   const dispatch = useDispatch();
   return (
     <div
-      className="text-dark1 font-bakbak lg:pl-32 pl-16 bg-light2 h-full pt-32"
+      className="text-dark1 font-bakbak lg:pl-32 pl-16 bg-light2 h-full lg:pt-32 pt-60"
       id="products"
     >
       <div className="lg:text-4xl text-xl">New Products</div>
@@ -96,11 +96,11 @@ function Products() {
       <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
         {newProducts.allproducts.slice(0, 5).map((product) => (
           <div>
-            <div class="hover:scale-110  duration-500 hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[15em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="hover:scale-110  duration-500 hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <Link state={product} to="/product">
                 <div className="place-self-center rounded-lg">
                   <img
-                    class="p-8 object-cover object-center w-[20em] h-[20em] "
+                    class="p-8 object-cover object-center lg:w-[20em] w-[14em] h-[20em] "
                     src={product.img}
                     alt={product.title}
                   />

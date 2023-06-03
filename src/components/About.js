@@ -14,7 +14,7 @@ function About() {
         </div>
       </div>
       <div className='lg:w-[50em] lg:pl-24 pl-2 lg:pt-0 pt-8'>
-      <iframe src="https://www.youtube.com/embed/v6FEvLcnzP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className='rounded-[1em] lg:h-[330px] lg:w-[600px] h-[10em] w-[15em]'></iframe>
+      <iframe src="https://www.youtube.com/embed/v6FEvLcnzP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className='rounded-[1em] lg:h-[330px] lg:w-[600px] h-[10em] w-[13em]'></iframe>
       </div>
     </div>
   )

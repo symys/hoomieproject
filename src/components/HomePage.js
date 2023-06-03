@@ -24,7 +24,7 @@ function HomePage() {
   return (
     <div className="bg-light2 h-screen text-dark1 font-bakbak ">
       <div className="flex lg:flex-row flex-col items-center self-center h-screen justify-evenly lg:pl-32 pl-16 lg:pr-32 lg:pt-0 pt-[20em]">
-        <div className="lg:w-[50em] w-[16em] flex flex-col lg:gap-6 gap-2">
+        <div className="lg:w-[50em] w-[13em] flex flex-col lg:gap-6 gap-2">
           <div className="lg:text-8xl text-2xl font-bold tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-transparent">
             Spring Sale!
           </div>
@@ -36,12 +36,12 @@ function HomePage() {
             semi-classical decor for inspiration.
           </div>
           <div>
-            <button className="lg:text-2xl text-xl font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent font-montserrat  hover:scale-110 duration-500 text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2">
+            <button className="lg:text-2xl sm:text-xl text-sm font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent font-montserrat  hover:scale-110 duration-500 text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2">
               <Link to="/allproducts">Start to shop now</Link>
             </button>
           </div>
         </div>
-        <div className=" w-[32em] pt-[3em]">
+        <div className=" lg:w-[32em] w-[15em] pt-[3em]">
           {/* <img src={homeimg} alt="homeimg" className="lg:h-[35em] h-[10em] rounded-[3em] shadow-2xl "/> */}
           {/* <div >
             <FurnitureSlider />
@@ -53,7 +53,7 @@ function HomePage() {
             modules={[Navigation, Autoplay]}
             centeredSlides={true}
             navigation={true}
-            className="w-[32em]  rounded-[2em] shadow-2xl"
+            className="lg:w-[32em] w-[13em]  rounded-[2em] shadow-2xl"
             // coverflowEffect={{
             //   rotate: 20,
             //   stretch: 0,
@@ -63,7 +63,7 @@ function HomePage() {
             // }}
             loop={true}
             autoplay={{
-              delay: 5000, // 5 saniye sonra otomatik oynatmayı başlat 
+              delay: 4000, // 4 saniye sonra otomatik oynatmayı başlat 
             }}
           >
             {furnitureImages.map((link) => (
