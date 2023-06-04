@@ -2,12 +2,39 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cartIcon from "../images/shopping-cart.png";
 import userIcon from "../images/user.png";
-import enterIcon from "../images/enter.png";
+import loginIcon from "../images/login.png";
+import logoutIcon from "../images/logout.png";
 import logo from "../images/sofa.png";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getAuth, signOut } from "firebase/auth";
+import app from "../firebase-config";
+import { useNavigate } from "react-router-dom";
+import { toggleLoginStatus } from "../loginSlice";
+
+
 
 function Newnav() {
+  const auth = getAuth(app);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    signOut(auth).then(() => {
+      dispatch(toggleLoginStatus(false))
+      navigate("/login")
+    }).catch((error) => {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    });
+  }
+
+  const goToLoginPage = () => {
+    navigate("/login")
+  }
+
   const cartItemQuantity = useSelector((state) => state.cartItems);
+  const loginStatus = useSelector(state => state.loginStatus)
+  // console.log(loginStatus)
   let Links = [
     // { name: "HOME", link: "/" },
     { name: "PRODUCTS", link: "/#products" },
@@ -77,13 +104,14 @@ function Newnav() {
                 className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
               />
             </Link>
-            <Link to="/login">
+            
               <img
-                src={enterIcon}
+               onClick={loginStatus.loginStatus ? logout : goToLoginPage}
+                src={loginStatus.loginStatus ? logoutIcon : loginIcon}
                 alt="cartIcon"
                 className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
               />
-            </Link>
+            
           </div>
           {/* <button className="bg-blue-600 text-white font-montserrat py-2 px-6 rounded md:ml-8 hover:bg-blue-400 duration-500">
             LOGIN or SIGNUP
