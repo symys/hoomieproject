@@ -14,12 +14,12 @@ import ASVANG from "./images/lowimages/grayCouch.jpg";
 import AGOTNES from "./images/lowimages/pinksofa.jpg";
 import LÖNSET from "./images/lowimages/teakWoodSofa.jpg";
 import LYCKSELE from "./images/lowimages/greenWoodenSofa.jpg";
-import FRIHETEN from "./images/lowimages/whiteCouch.jpg";
-import SPRUTTIG from "./images/lowimages/whiteSofaWithGreenPillows.jpg";
-import BRIMNES from "./images/lowimages/whitePearlChair.jpg";
-import HAMMARN from "./images/lowimages/whiteWickerChair.jpg";
-import HOLMSUND from "./images/lowimages/yellowArmchair.jpg";
-import NYHAMN from "./images/lowimages/whiteSofa.jpg";
+// import FRIHETEN from "./images/lowimages/whiteCouch.jpg";
+// import SPRUTTIG from "./images/lowimages/whiteSofaWithGreenPillows.jpg";
+// import BRIMNES from "./images/lowimages/whitePearlChair.jpg";
+// import HAMMARN from "./images/lowimages/whiteWickerChair.jpg";
+// import HOLMSUND from "./images/lowimages/yellowArmchair.jpg";
+// import NYHAMN from "./images/lowimages/whiteSofa.jpg";
 
 
 const initialState = {
@@ -159,60 +159,60 @@ const initialState = {
       price: "$120",
       star: "../images/5.png",
     },
-    {
-      id: 16,
-      orderQuantity: 0,
-      name: "White Couch",
-      img: FRIHETEN,
-      title: "FRIHETEN",
-      price: "$180",
-      star: "../images/5.png",
-    },
-    {
-      id: 17,
-      orderQuantity: 0,
-      name: "White Sofa with Green Pillows",
-      img: SPRUTTIG,
-      title: "SPRUTTIG",
-      price: "$100",
-      star: "../images/3.png",
-    },
-    {
-      id: 18,
-      orderQuantity: 0,
-      name: "White Pearl Chair",
-      img: BRIMNES,
-      title: "BRIMNES",
-      price: "$77",
-      star: "../images/4.png",
-    },
-    {
-      id: 19,
-      orderQuantity: 0,
-      name: "White Wicker Chair",
-      img: HAMMARN,
-      title: "HAMMARN",
-      price: "$43",
-      star: "../images/4.png",
-    },
-    {
-      id: 20,
-      orderQuantity: 0,
-      name: "Yellow Arm Chair",
-      img: HOLMSUND,
-      title: "HOLMSUND",
-      price: "$43",
-      star: "../images/4.png",
-    },
-    {
-      id: 21,
-      orderQuantity: 0,
-      name: "White Sofa",
-      img: NYHAMN,
-      title: "NYHAMN",
-      price: "$43",
-      star: "../images/4.png",
-    },
+    // {
+    //   id: 16,
+    //   orderQuantity: 0,
+    //   name: "White Couch",
+    //   img: FRIHETEN,
+    //   title: "FRIHETEN",
+    //   price: "$180",
+    //   star: "../images/5.png",
+    // },
+    // {
+    //   id: 17,
+    //   orderQuantity: 0,
+    //   name: "White Sofa with Green Pillows",
+    //   img: SPRUTTIG,
+    //   title: "SPRUTTIG",
+    //   price: "$100",
+    //   star: "../images/3.png",
+    // },
+    // {
+    //   id: 18,
+    //   orderQuantity: 0,
+    //   name: "White Pearl Chair",
+    //   img: BRIMNES,
+    //   title: "BRIMNES",
+    //   price: "$77",
+    //   star: "../images/4.png",
+    // },
+    // {
+    //   id: 19,
+    //   orderQuantity: 0,
+    //   name: "White Wicker Chair",
+    //   img: HAMMARN,
+    //   title: "HAMMARN",
+    //   price: "$43",
+    //   star: "../images/4.png",
+    // },
+    // {
+    //   id: 20,
+    //   orderQuantity: 0,
+    //   name: "Yellow Arm Chair",
+    //   img: HOLMSUND,
+    //   title: "HOLMSUND",
+    //   price: "$43",
+    //   star: "../images/4.png",
+    // },
+    // {
+    //   id: 21,
+    //   orderQuantity: 0,
+    //   name: "White Sofa",
+    //   img: NYHAMN,
+    //   title: "NYHAMN",
+    //   price: "$43",
+    //   star: "../images/4.png",
+    // },
   ],
   cartItem: 0,
   cartItems: [],

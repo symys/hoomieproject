@@ -20,7 +20,7 @@ function AllProducts() {
       <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
         {products.allproducts.map((product, index) => (
           <div key={index}>
-            <div class="hover:scale-110  duration-500 hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[15em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[15em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="place-self-center rounded-lg">
                 <Link state={product} to="/product">
                   <img
