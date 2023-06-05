@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { onAdd } from "../cartItemsSlice.js";
+import { toastr } from 'react-redux-toastr';
 
 function AllProducts() {
   //sadece böyle yaparsam her butona tıkladığımda en yukarı atıyor.
@@ -98,7 +99,7 @@ function AllProducts() {
                     {product.price}
                   </span>
                   <button
-                    onClick={() => dispatch(onAdd(product))}
+                    onClick={() => {dispatch(onAdd(product)); toastr.success('Product added to cart') }}
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg lg:text-sm text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Add to cart
