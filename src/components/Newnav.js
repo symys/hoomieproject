@@ -11,29 +11,29 @@ import app from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import { toggleLoginStatus } from "../loginSlice";
 
-
-
 function Newnav() {
   const auth = getAuth(app);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logout = () => {
-    signOut(auth).then(() => {
-      dispatch(toggleLoginStatus(false))
-      navigate("/login")
-    }).catch((error) => {
-      // eslint-disable-next-line no-console
-      console.log(error)
-    });
-  }
+    signOut(auth)
+      .then(() => {
+        dispatch(toggleLoginStatus(false));
+        navigate("/login");
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      });
+  };
 
   const goToLoginPage = () => {
-    navigate("/login")
-  }
+    navigate("/login");
+  };
 
   const cartItemQuantity = useSelector((state) => state.cartItems);
-  const loginStatus = useSelector(state => state.loginStatus)
+  const loginStatus = useSelector((state) => state.loginStatus);
   // console.log(loginStatus)
   let Links = [
     // { name: "HOME", link: "/" },
@@ -82,7 +82,7 @@ function Newnav() {
               CONTACT
             </li>
           </Link>
-          <div className="md:flex lg:ml-6 lg:gap-6 ">
+          <div className="md:flex lg:ml-6 lg:gap-6 lg:mt-0 mt-2">
             <button className="relative">
               <Link to="/cart">
                 <img
@@ -104,14 +104,12 @@ function Newnav() {
                 className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
               />
             </Link>
-            
-              <img
-               onClick={loginStatus.loginStatus ? logout : goToLoginPage}
-                src={loginStatus.loginStatus ? logoutIcon : loginIcon}
-                alt="cartIcon"
-                className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6"
-              />
-            
+            <img
+              onClick={loginStatus.loginStatus ? logout : goToLoginPage}
+              src={loginStatus.loginStatus ? logoutIcon : loginIcon}
+              alt="cartIcon"
+              className="hover:scale-110 duration-500 cursor-pointer lg:h-10 h-6 lg:mt-0 mt-2"
+            />
           </div>
           {/* <button className="bg-blue-600 text-white font-montserrat py-2 px-6 rounded md:ml-8 hover:bg-blue-400 duration-500">
             LOGIN or SIGNUP

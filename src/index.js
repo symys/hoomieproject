@@ -19,7 +19,7 @@ root.render(
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <App />
-        <ReduxToastr
+        <ReduxToastr className="text-sm lg:text-base"
           timeOut={3000}
           newestOnTop={false}
           preventDuplicates
