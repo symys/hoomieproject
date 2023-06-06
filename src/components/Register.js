@@ -70,6 +70,7 @@ function Register() {
           className="lg:h-[3em] h-[2em] placeholder:tracking-wider placeholder:pl-4 placeholder:text-sm"
         />
         <input
+         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
