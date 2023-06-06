@@ -72,6 +72,7 @@ function Product() {
                     onChange={ratingChanged}
                     size={30}
                     color2={"#ffd700"}
+                    value={4}
                   />
                 </div>
             <div className="self-center underline hover:cursor-pointer">
