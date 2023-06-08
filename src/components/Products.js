@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import seemore from "../images/seemoreBtn.png";
 import { useDispatch, useSelector } from "react-redux";
 import { onAdd } from "../cartItemsSlice.js";
-import { toastr } from 'react-redux-toastr';
+import { toastr } from "react-redux-toastr";
+import { motion } from "framer-motion";
 
+const cardAnimate = {
+  offscreen: { x: -100 },
+  onscreen: {
+    x: 0,
+    transition: { type: "spring", bounce: 0.4, duration: 3 },
+  },
+};
 
 function Products() {
   const newProducts = useSelector((state) => state.cartItems);
@@ -22,7 +30,13 @@ function Products() {
       <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
         {newProducts.allproducts.slice(0, 7).map((product) => (
           <div>
-            <div class=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <motion.div
+              initial={"offscreen"}
+              whileInView={"onscreen"}
+              transition={{ staggerChildren: 0.5 }}
+              variants={cardAnimate}
+              className=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
               <Link state={product} to="/product">
                 <div className="place-self-center rounded-lg">
                   <img
@@ -43,10 +57,19 @@ function Products() {
                   <span class="lg:text-3xl text-lg font-bold text-gray-900 dark:text-white">
                     {product.price}
                   </span>
-                  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg lg:text-sm text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => {dispatch(onAdd(product)); toastr.success('Product added to cart') }}>Add to cart</button>
+                  <button
+                    variants={cardAnimate}
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg lg:text-sm text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    onClick={() => {
+                      dispatch(onAdd(product));
+                      toastr.success("Product added to cart");
+                    }}
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
         <div className="lg:place-self-center lg:ml-0 ml-[6em] opacity-80 hover:opacity-100  hover:cursor-pointer hover:brightness-125 duration-700">
