@@ -24,6 +24,8 @@ const paymentValidationSchema = Yup.object().shape({
   ccv: Yup.string().required("CVS/CVV is required"),
 });
 
+const thanksProps = "Thank you for choosing us. Your order is being prepared for departure, we wish you to enjoy it in good days."
+
 function OrderPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -75,7 +77,7 @@ function OrderPage() {
     onSubmit: async (values) => {
       toastr.success("Your order has been prepared!");
       dispatch(clearCart())
-      navigate("/thankyou")
+      navigate("/thankyou", {state:thanksProps})
       console.log("Valid form data:", values);
     },
   });

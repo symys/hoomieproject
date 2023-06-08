@@ -1,7 +1,7 @@
 import React from "react";
 import { Link} from 'react-router-dom';
 
-const thanksProps="thank you"
+const thanksProps="Thank you, we will get back to you as soon as possible"
 
 function Contact() {
   

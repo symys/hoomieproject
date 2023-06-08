@@ -6,6 +6,7 @@ import logo from "../images/sofa.png";
 import { useDispatch } from "react-redux";
 import { toggleLoginStatus } from "../loginSlice.js";
 
+const thanksProps = "Thank you for registering. We wish you good shopping already now..."
 
 function Register() {
 
@@ -27,7 +28,7 @@ function Register() {
         
         // eslint-disable-next-line no-alert
         alert("Sign up successfully!");
-        navigate("/thankyou")
+        navigate("/thankyou", {state:thanksProps})
       })
       .catch((error) => {
         const errorMessage = error.message;
