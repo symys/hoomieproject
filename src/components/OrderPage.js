@@ -234,7 +234,7 @@ function OrderPage() {
                 for="helper-radio"
                 class="font-medium text-gray-900 dark:text-gray-300"
               >
-                Express shipping - $30
+                Express shipping - $100
               </label>
               <p
                 id="helper-radio-text"
