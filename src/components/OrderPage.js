@@ -11,15 +11,23 @@ const validationSchema = Yup.object().shape({
   city: Yup.string().required("City is required"),
   state: Yup.string().required("State/Province  is required"),
   postalCode: Yup.string().required("ZIP/Postal code is required"),
+  cartnumber: Yup.string().required("Credit Cart Number is required"),
+  date: Yup.string().required("Date is required"),
+  ccv: Yup.string().required("CVS/CVV is required"),
 });
 
 function OrderPage() {
   //delivery ile payment method butonları arası gecisi tutar
   const [isToggle, setToggle] = useState(true);
-
+  //delivery methoddaki radio butonlar icin
   const [{ firstIsChecked, secondIsChecked }, setChecked] = useState({
     firstIsChecked: true,
     secondIsChecked: false,
+  });
+  //payment methoddaki radio buttonlar icin
+  const [{ visaChecked, masterChecked }, setCart] = useState({
+    visaChecked: true,
+    masterChecked: false,
   });
 
   const formik = useFormik({
@@ -32,6 +40,9 @@ function OrderPage() {
       city: "",
       state: "",
       postalCode: "",
+      cartnumber: "",
+      date: "",
+      ccv: "",
     },
     validationSchema,
     onSubmit: (values) => {
@@ -48,12 +59,28 @@ function OrderPage() {
         firstIsChecked: true,
         secondIsChecked: false,
       }));
-    }
-    else if(e.target.value === "second"){
+    } else if (e.target.value === "second") {
       setChecked((prevState) => ({
         ...prevState,
         firstIsChecked: false,
         secondIsChecked: true,
+      }));
+    }
+  }
+
+  function updateCart(e) {
+    // console.log(e.target.value)
+    if (e.target.value === "visa") {
+      setCart((prevState) => ({
+        ...prevState,
+        visaChecked: true,
+        masterChecked: false,
+      }));
+    } else if (e.target.value === "master") {
+      setCart((prevState) => ({
+        ...prevState,
+        visaChecked: false,
+        masterChecked: true,
       }));
     }
   }
@@ -255,20 +282,130 @@ function OrderPage() {
     </div>
   );
 
-  const paymentPart = <div>hello</div>;
+  const paymentPart = (
+    <div className=" min-w-[65vw] h-auto p-10 bg-white rounded-[1em] shadow-2xl">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="flex flex-col min-w-[60vw] place-self-center w-[30vw] gap-5"
+      >
+        <div className="gap-6 flex sm:flex-row flex-col">
+          <div class="flex">
+            <div class="flex items-center h-5">
+              <input
+                id="helper-radio"
+                aria-describedby="helper-radio-text"
+                type="radio"
+                value="visa"
+                checked={visaChecked}
+                onClick={(e) => updateCart(e)}
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+            <div class="ml-2 text-lg">
+              <label
+                for="helper-radio"
+                class="font-medium text-gray-900 dark:text-gray-300"
+              >
+                VISA
+              </label>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="flex items-center h-5">
+              <input
+                id="helper-radio"
+                aria-describedby="helper-radio-text"
+                type="radio"
+                value="master"
+                checked={masterChecked}
+                onClick={(e) => updateCart(e)}
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+            <div class="ml-2 text-lg">
+              <label
+                for="helper-radio"
+                class="font-medium text-gray-900 dark:text-gray-300"
+              >
+                Mastercard
+              </label>
+            </div>
+          </div>
+        </div>
+        <div className="flex lg:flex-row flex-col lg:justify-between gap-5 lg:gap-0 ">
+          <div>
+            <input
+              className="border-2 lg:h-[3em] h-[2em] lg:min-w-[40em] w-full placeholder:tracking-wider placeholder:pl-4 placeholder:text-sm"
+              type="text"
+              name="cartnumber"
+              placeholder="Credit Cart Number (XXXX XXXX XXXX XXXX)"
+              value={formik.values.cartnumber}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.cartnumber && formik.errors.cartnumber && (
+              <p className="text-red-500">{formik.errors.cartnumber}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex lg:flex-row flex-col lg:justify-between gap-5 lg:gap-0 ">
+          <div>
+            <input
+              className="border-2 lg:h-[3em] h-[2em] lg:min-w-[30em] w-full placeholder:tracking-wider placeholder:pl-4 placeholder:text-sm"
+              type="date"
+              name="date"
+              placeholder="Date"
+              value={formik.values.date}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.date && formik.errors.date && (
+              <p className="text-red-500">{formik.errors.date}</p>
+            )}
+          </div>
+          <div>
+            <input
+              className="border-2 lg:h-[3em] h-[2em] lg:min-w-[30em] w-full placeholder:tracking-wider placeholder:pl-4 placeholder:text-sm"
+              type="text"
+              name="ccv"
+              placeholder="CVS/CVV"
+              value={formik.values.ccv}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.ccv && formik.errors.ccv && (
+              <p className="text-red-500">{formik.errors.ccv}</p>
+            )}
+          </div>
+        </div>
+
+        <input
+          className="lg:text-2xl sm:text-xl text-sm font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2 hover:cursor-pointer "
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  );
+
+  //delivery ve payment butonlarının gorunumunu etkileyen className
+  const toggledButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-3 py-2 lg:px-[2.5em] px-8 rounded lg:text-xl text-sm tracking-widest" 
+  const otherButtonClass = "hover:bg-blue-500 hover:text-white border-2 font-bold lg:py-3 py-2 lg:px-[2.5em] px-8 rounded lg:text-xl text-sm tracking-widest"
 
   return (
     <div className="font-montserrat items-center flex flex-col justify-center bg-light1 gap-1 pt-[8em] pb-[2em] lg:h-screen">
       <div className="gap-2 flex sm:flex-row flex-col bg-light3 p-2 rounded-[1em]">
         <button
           onClick={() => setToggle(true)}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-3 py-2 lg:px-[2.5em] px-8 rounded lg:text-xl text-sm tracking-widest"
+          className={isToggle ? toggledButtonClass : otherButtonClass}
         >
           Delivery Address
         </button>
         <button
           onClick={() => setToggle(false)}
-          className="hover:bg-blue-500 hover:text-white border-2 font-bold lg:py-3 py-2 lg:px-[2.5em] px-8 rounded lg:text-xl text-sm tracking-widest"
+          className= {isToggle ? otherButtonClass : toggledButtonClass}
         >
           Payment Method
         </button>
