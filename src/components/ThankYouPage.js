@@ -18,7 +18,7 @@ function ThankYouPage() {
     <div className="flex flex-col font-montserrat justify-center items-center h-screen bg-[url(/home/seymademir/Development/code/React/hoomieproject/src/images/pinkthanks.jpeg)] bg-cover bg-center">
       <motion.div initial={"offscreen"}
           whileInView={"onscreen"}
-          transition={{staggerChildren:0.1}} variants={thanksAnimate}  className="sm:text-xl text-sm sm:p-20 p-10 m-2 mb-2 shadow-2xl rounded-[1em] font-black tracking-wider bg-white">
+          transition={{staggerChildren:0.1}} variants={thanksAnimate}  className="sm:text-3xl text-sm sm:p-20 p-10 m-2 mb-2 shadow-3xl rounded-[1em] font-bakbak tracking-wider bg-white opacity-70">
         {propsData}
       </motion.div>
       <div>
