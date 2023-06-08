@@ -246,9 +246,15 @@ export const cartItemsSlice = createSlice({
       
             // console.log(exist);
     },
+    clearCart:(state) => {
+      return {...state,
+        cartItem: 0,
+  cartItems: [],
+  totalPrice: 0}
+    }
   },
 });
 
-export const { onAdd, onDelete, onRemove } = cartItemsSlice.actions;
+export const { onAdd, onDelete, onRemove, clearCart } = cartItemsSlice.actions;
 
 export default cartItemsSlice.reducer;

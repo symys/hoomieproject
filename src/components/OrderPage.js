@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { toastr } from "react-redux-toastr";
+import {useNavigate} from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { clearCart } from "../cartItemsSlice.js";
 
-const validationSchema = Yup.object().shape({
+const deliveryValidationSchema = Yup.object().shape({
   name: Yup.string().required("First name is required"),
   lastname: Yup.string().required("Last name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -11,12 +15,18 @@ const validationSchema = Yup.object().shape({
   city: Yup.string().required("City is required"),
   state: Yup.string().required("State/Province  is required"),
   postalCode: Yup.string().required("ZIP/Postal code is required"),
+
+});
+
+const paymentValidationSchema = Yup.object().shape({
   cartnumber: Yup.string().required("Credit Cart Number is required"),
-  date: Yup.string().required("Date is required"),
+  date: Yup.string().required("Month and year is required"),
   ccv: Yup.string().required("CVS/CVV is required"),
 });
 
 function OrderPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
   //delivery ile payment method butonları arası gecisi tutar
   const [isToggle, setToggle] = useState(true);
   //delivery methoddaki radio butonlar icin
@@ -30,7 +40,7 @@ function OrderPage() {
     masterChecked: false,
   });
 
-  const formik = useFormik({
+  const deliveryFormik = useFormik({
     initialValues: {
       name: "",
       lastname: "",
@@ -40,14 +50,33 @@ function OrderPage() {
       city: "",
       state: "",
       postalCode: "",
+      // cartnumber: "",
+      // date: "",
+      // ccv: "",
+    },
+    validationSchema: deliveryValidationSchema,
+    onSubmit: (values) => {
+    
+        console.log("Valid form data:", values);
+
+     setToggle(false)
+      toastr.success("Delivery Address saved!")
+      // Diğer işlemleri burada gerçekleştirin
+    },
+  });
+
+  const paymentFormik = useFormik({
+    initialValues: {
       cartnumber: "",
       date: "",
       ccv: "",
     },
-    validationSchema,
+    validationSchema: paymentValidationSchema,
     onSubmit: (values) => {
+      toastr.success("Your order has been prepared!");
+      dispatch(clearCart)
+      navigate("/thankyou")
       console.log("Valid form data:", values);
-      // Diğer işlemleri burada gerçekleştirin
     },
   });
 
@@ -88,7 +117,7 @@ function OrderPage() {
   const deliveryPart = (
     <div className=" min-w-[65vw] h-auto p-10 bg-white rounded-[1em] shadow-2xl">
       <form
-        onSubmit={formik.handleSubmit}
+        onSubmit={deliveryFormik.handleSubmit}
         className="flex flex-col min-w-[60vw] place-self-center w-[30vw] gap-5"
       >
         <div className="flex lg:flex-row flex-col lg:justify-between gap-5 lg:gap-0 ">
@@ -98,12 +127,12 @@ function OrderPage() {
               type="text"
               name="name"
               placeholder="First name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.name}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.name && formik.errors.name && (
-              <p className="text-red-500">{formik.errors.name}</p>
+            {deliveryFormik.touched.name && deliveryFormik.errors.name && (
+              <p className="text-red-500">{deliveryFormik.errors.name}</p>
             )}
           </div>
           <div>
@@ -112,12 +141,12 @@ function OrderPage() {
               type="text"
               name="lastname"
               placeholder="Last name"
-              value={formik.values.lastname}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.lastname}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.lastname && formik.errors.lastname && (
-              <p className="text-red-500">{formik.errors.lastname}</p>
+            {deliveryFormik.touched.lastname && deliveryFormik.errors.lastname && (
+              <p className="text-red-500">{deliveryFormik.errors.lastname}</p>
             )}
           </div>
         </div>
@@ -129,12 +158,12 @@ function OrderPage() {
               type="text"
               name="email"
               placeholder="Email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.email}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.phone && formik.errors.phone && (
-              <p className="text-red-500">{formik.errors.phone}</p>
+            {deliveryFormik.touched.email && deliveryFormik.errors.email && (
+              <p className="text-red-500">{deliveryFormik.errors.email}</p>
             )}
           </div>
           <div>
@@ -143,12 +172,12 @@ function OrderPage() {
               type="text"
               name="phone"
               placeholder="Phone"
-              value={formik.values.phone}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.phone}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.phone && formik.errors.phone && (
-              <p className="text-red-500">{formik.errors.phone}</p>
+            {deliveryFormik.touched.phone && deliveryFormik.errors.phone && (
+              <p className="text-red-500">{deliveryFormik.errors.phone}</p>
             )}
           </div>
         </div>
@@ -159,12 +188,12 @@ function OrderPage() {
             type="text"
             name="address"
             placeholder="Address"
-            value={formik.values.address}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={deliveryFormik.values.address}
+            onChange={deliveryFormik.handleChange}
+            onBlur={deliveryFormik.handleBlur}
           />
-          {formik.touched.address && formik.errors.address && (
-            <p className="text-red-500">{formik.errors.address}</p>
+          {deliveryFormik.touched.address && deliveryFormik.errors.address && (
+            <p className="text-red-500">{deliveryFormik.errors.address}</p>
           )}
         </div>
 
@@ -175,12 +204,12 @@ function OrderPage() {
               type="text"
               name="city"
               placeholder="City"
-              value={formik.values.city}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.city}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.city && formik.errors.city && (
-              <p className="text-red-500">{formik.errors.city}</p>
+            {deliveryFormik.touched.city && deliveryFormik.errors.city && (
+              <p className="text-red-500">{deliveryFormik.errors.city}</p>
             )}
           </div>
 
@@ -190,12 +219,12 @@ function OrderPage() {
               type="text"
               name="state"
               placeholder="State/Province"
-              value={formik.values.state}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.state}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.state && formik.errors.state && (
-              <p className="text-red-500">{formik.errors.state}</p>
+            {deliveryFormik.touched.state && deliveryFormik.errors.state && (
+              <p className="text-red-500">{deliveryFormik.errors.state}</p>
             )}
           </div>
 
@@ -205,12 +234,12 @@ function OrderPage() {
               type="text"
               name="postalCode"
               placeholder="ZIP/Postal Code"
-              value={formik.values.postalCode}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={deliveryFormik.values.postalCode}
+              onChange={deliveryFormik.handleChange}
+              onBlur={deliveryFormik.handleBlur}
             />
-            {formik.touched.postalCode && formik.errors.postalCode && (
-              <p className="text-red-500">{formik.errors.postalCode}</p>
+            {deliveryFormik.touched.postalCode && deliveryFormik.errors.postalCode && (
+              <p className="text-red-500">{deliveryFormik.errors.postalCode}</p>
             )}
           </div>
         </div>
@@ -274,9 +303,9 @@ function OrderPage() {
         </div>
 
         <input
-          className="lg:text-2xl sm:text-xl text-sm font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2 hover:cursor-pointer "
-          type="submit"
-          value="Submit"
+          className="lg:text-2xl sm:text-xl text-sm font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2 hover:cursor-pointer text-center"
+         type="submit"
+          value="Choose the payment method"
         />
       </form>
     </div>
@@ -285,7 +314,7 @@ function OrderPage() {
   const paymentPart = (
     <div className=" min-w-[65vw] h-auto p-10 bg-white rounded-[1em] shadow-2xl">
       <form
-        onSubmit={formik.handleSubmit}
+        onSubmit={paymentFormik.handleSubmit}
         className="flex flex-col min-w-[60vw] place-self-center w-[30vw] gap-5"
       >
         <div className="gap-6 flex sm:flex-row flex-col">
@@ -340,12 +369,12 @@ function OrderPage() {
               type="text"
               name="cartnumber"
               placeholder="Credit Cart Number (XXXX XXXX XXXX XXXX)"
-              value={formik.values.cartnumber}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={paymentFormik.values.cartnumber}
+              onChange={paymentFormik.handleChange}
+              onBlur={paymentFormik.handleBlur}
             />
-            {formik.touched.cartnumber && formik.errors.cartnumber && (
-              <p className="text-red-500">{formik.errors.cartnumber}</p>
+            {paymentFormik.touched.cartnumber && paymentFormik.errors.cartnumber && (
+              <p className="text-red-500">{paymentFormik.errors.cartnumber}</p>
             )}
           </div>
         </div>
@@ -354,15 +383,15 @@ function OrderPage() {
           <div>
             <input
               className="border-2 lg:h-[3em] h-[2em] lg:min-w-[30em] w-full placeholder:tracking-wider placeholder:pl-4 placeholder:text-sm"
-              type="date"
+              type="text"
               name="date"
-              placeholder="Date"
-              value={formik.values.date}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              placeholder="MM/YY"
+              value={paymentFormik.values.date}
+              onChange={paymentFormik.handleChange}
+              onBlur={paymentFormik.handleBlur}
             />
-            {formik.touched.date && formik.errors.date && (
-              <p className="text-red-500">{formik.errors.date}</p>
+            {paymentFormik.touched.date && paymentFormik.errors.date && (
+              <p className="text-red-500">{paymentFormik.errors.date}</p>
             )}
           </div>
           <div>
@@ -371,12 +400,12 @@ function OrderPage() {
               type="text"
               name="ccv"
               placeholder="CVS/CVV"
-              value={formik.values.ccv}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={paymentFormik.values.ccv}
+              onChange={paymentFormik.handleChange}
+              onBlur={paymentFormik.handleBlur}
             />
-            {formik.touched.ccv && formik.errors.ccv && (
-              <p className="text-red-500">{formik.errors.ccv}</p>
+            {paymentFormik.touched.ccv && paymentFormik.errors.ccv && (
+              <p className="text-red-500">{paymentFormik.errors.ccv}</p>
             )}
           </div>
         </div>

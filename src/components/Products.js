@@ -1,84 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import VIMLE from "../images/lowimages/vintageYellowCouch.jpg";
-// import EKOLSUND from "../images/lowimages/blackPlasticChair.jpg";
-// import JÄTTEBO from "../images/lowimages/wickerHanmadeWoodenChair.jpg";
-// import LANDSKRONA from "../images/lowimages/vintageMiniChairandSofa.jpg";
-// import SÖDERHAMN from "../images/lowimages/orangeBoxFoamSofa.jpg";
-// import LINNEBÄCK from "../images/lowimages/grayPaddedChair.jpg";
-// import NOLMYRA from "../images/lowimages/claretRedSofa.jpg";
 import seemore from "../images/seemoreBtn.png";
-// import EKENÄSET from "../images/lowimages/copperWiredAccentChair.jpg";
-// import PELLO from "../images/lowimages/teakWoodSofa.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { onAdd } from "../cartItemsSlice.js";
 import { toastr } from 'react-redux-toastr';
 
-// const newproducts = [
-//   {
-//     name: "Vintage Yellow Couch",
-//     img: VIMLE,
-//     title: "VIMLE",
-//     price: "$92",
-//     star: "../images/4.png",
-//   },
-//   {
-//     name: "Black Chair",
-//     img: EKOLSUND,
-//     title: "GISTAD",
-//     price: "$82",
-//     star: "../images/3.png",
-//   },
-//   {
-//     name: "Wicker Hanmade Wooden Chair",
-//     img: JÄTTEBO,
-//     title: "JÄTTEBO",
-//     price: "$90",
-//     star: "../images/4.png",
-//   },
-//   {
-//     name: "Vintage Mini Chair and Sofa",
-//     img: LANDSKRONA,
-//     title: "LANDSKRONA",
-//     price: "$120",
-//     star: "../images/5.png",
-//   },
-//   {
-//     name: "Orange Box Foam Sofa",
-//     img: SÖDERHAMN,
-//     title: "SÖDERHAMN",
-//     price: "$180",
-//     star: "../images/5.png",
-//   },
-//   {
-//     name: "Gray Padded Chair",
-//     img: LINNEBÄCK,
-//     title: "LINNEBÄCK",
-//     price: "$100",
-//     star: "../images/3.png",
-//   },
-//   {
-//     name: "Claret Red Sofa",
-//     img: NOLMYRA,
-//     title: "NOLMYRA",
-//     price: "$77",
-//     star: "../images/4.png",
-//   },
-//   // {
-//   //   name: "Copper Wired Accent Chair",
-//   //   img: EKENÄSET,
-//   //   title: "EKENÄSET",
-//   //   price: "$43",
-//   //   star: "../images/4.png",
-//   // },
-//   // {
-//   //   name: "Copper Wired Accent Chair",
-//   //   img: PELLO,
-//   //   title: "PELLO",
-//   //   price: "$43",
-//   //   star: "../images/4.png",
-//   // },
-// ];
 
 function Products() {
   const newProducts = useSelector((state) => state.cartItems);
