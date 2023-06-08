@@ -8,7 +8,7 @@ import {reducer as toastrReducer} from 'react-redux-toastr'
 
 const persistConfig = {
     key: "root",
-    storage
+    storage,
 }
 
 const reducer = combineReducers({

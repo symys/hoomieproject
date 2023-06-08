@@ -72,9 +72,9 @@ function OrderPage() {
       ccv: "",
     },
     validationSchema: paymentValidationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       toastr.success("Your order has been prepared!");
-      dispatch(clearCart)
+      dispatch(clearCart())
       navigate("/thankyou")
       console.log("Valid form data:", values);
     },

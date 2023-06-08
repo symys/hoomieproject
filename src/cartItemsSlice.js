@@ -247,10 +247,12 @@ export const cartItemsSlice = createSlice({
             // console.log(exist);
     },
     clearCart:(state) => {
-      return {...state,
-        cartItem: 0,
-  cartItems: [],
-  totalPrice: 0}
+      console.log(state)
+      const newState = {...state, cartItem: 0,
+        cartItems: [],
+        totalPrice: 0}
+        console.log(newState)
+     return newState
     }
   },
 });
