@@ -27,7 +27,7 @@ function Products() {
         Purchase the product listed below as soon as possible before it sells
         out.
       </div>
-      <div className="flex lg:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
+      <div className="flex sm:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
         {newProducts.allproducts.slice(0, 7).map((product) => (
           <div>
             <motion.div
@@ -35,12 +35,12 @@ function Products() {
               whileInView={"onscreen"}
               transition={{ staggerChildren: 0.5 }}
               variants={cardAnimate}
-              className=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              className=" hover:cursor-pointer flex flex-col lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
               <Link state={product} to="/product">
                 <div className="place-self-center rounded-lg">
                   <img
-                    class="p-8 object-cover object-center lg:w-[20em] w-[14em] h-[20em] "
+                    class="p-8 object-cover object-center lg:w-[20em] w-[14em] lg:h-[20em] h-[14em]"
                     src={product.img}
                     alt={product.title}
                   />
@@ -72,7 +72,7 @@ function Products() {
             </motion.div>
           </div>
         ))}
-        <div className="lg:place-self-center lg:ml-0 ml-[6em] opacity-80 hover:opacity-100  hover:cursor-pointer hover:brightness-125 duration-700">
+        <div className="sm:place-self-center lg:ml-0 ml-[6em] opacity-80 hover:opacity-100  hover:cursor-pointer hover:brightness-125 duration-700">
           <Link to="/allproducts" className=" lg:gap-8 gap-4 flex flex-col">
             {" "}
             <img

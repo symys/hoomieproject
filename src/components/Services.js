@@ -50,7 +50,7 @@ function Services() {
       <motion.div  initial={"offscreen"}
           whileInView={"onscreen"}
           transition={{staggerChildren:0.1}} className="flex flex-col gap-6 basis-1/2 text-center items-center justify-center lg:ml-16 ml-10 mr-16 scale-75">
-        <div className="flex lg:flex-row flex-col gap-6 ">
+        <div className="flex sm:flex-row flex-col gap-6 ">
           <motion.div 
          
             variants={firstGroupServiceAnimate}
@@ -72,7 +72,7 @@ function Services() {
             </div>
           </motion.div>
         </div>
-        <div className="flex lg:flex-row flex-col gap-6">
+        <div className="flex sm:flex-row flex-col gap-6">
           <motion.div variants={secondGroupServiceAnimate} className="bg-light1 text-dark1 p-[2em] flex flex-col items-center ">
             <img src={moneyback} alt="moneyback" className="w-[12em]" />
             <div className="w-[12em] text-lg">

@@ -42,7 +42,7 @@ function About() {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
-          className="rounded-[1em] lg:h-[330px] lg:w-[600px] h-[10em] w-[13em]"
+          className="rounded-[1em] lg:h-[330px] lg:w-[600px] h-[10em] sm:w-[20em] w-[13em]"
         ></iframe>
       </motion.div>
     </div>

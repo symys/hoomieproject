@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens:{
+        'sm': '620px',
+      },
       fontFamily: {
         montserrat: ["Montserrat"],
         lilita: ["Lilita One"],

@@ -34,13 +34,12 @@ function HomePage() {
     
     className="bg-light2 h-screen text-dark1 font-bakbak ">
       <div 
-      
       className="flex lg:flex-row flex-col items-center self-center h-screen justify-evenly lg:pl-32 pl-16 lg:pr-32 lg:pt-0 pt-[20em]">
         <motion.div initial={"offscreen"}
       whileInView={"onscreen"}
       transition={{staggerChildren:0.5}}
-        variants={homeAnimate} className="lg:w-[50em] w-[13em] flex flex-col lg:gap-6 gap-2">
-          <div className="lg:text-8xl text-2xl pt-6 font-bold tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-transparent">
+        variants={homeAnimate} className="lg:w-[50em] sm:w-[30em] w-[13em] flex flex-col lg:gap-6 gap-2">
+          <div className="lg:text-8xl text-2xl sm:pt-0 pt-6 font-bold tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-transparent">
             Spring Sale!
           </div>
           <div className="lg:text-4xl text-xl">Get 35% off Sofas</div>
@@ -59,14 +58,14 @@ function HomePage() {
         <motion.div initial={"offscreen"}
       whileInView={"onscreen"}
       transition={{staggerChildren:0.5}}
-        variants={swiperAnimate} className=" lg:w-[32em] w-[15em] pt-[3em]">
+        variants={swiperAnimate} className=" lg:w-[32em] w-[20em] pt-[3em]">
           <Swiper
             effect="coverflow"
             grabCursor={true}
             modules={[Navigation, Autoplay]}
             centeredSlides={true}
             navigation={true}
-            className="lg:w-[32em] w-[13em]  rounded-[2em] shadow-2xl"
+            className="lg:w-[32em] sm:w-[18em] w-[13em] rounded-[2em] shadow-2xl"
             // coverflowEffect={{
             //   rotate: 20,
             //   stretch: 0,
