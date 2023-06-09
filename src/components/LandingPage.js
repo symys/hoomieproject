@@ -4,8 +4,6 @@ import HomePage from './HomePage'
 import Products from "./Products"
 import Services from "./Services"
 import About from "./About"
-// import Deneme from "./deneme"
-
 
 function LandingPage() {
   return (
@@ -18,7 +16,6 @@ function LandingPage() {
            <Products/>
            <Services/>
            <About />
-           {/* <Deneme /> */}
         </div>
         
     </div>

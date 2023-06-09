@@ -18,12 +18,6 @@ module.exports = {
         error: "#EE5142",
         info: "#46C275",
       },
-      backgroundImage: {
-        landing:
-          "url('/home/seymademir/Development/code/React/hoomieproject/src/images/landingPageBg.jpg')",
-        pinkbg:
-          'url("/home/seymademir/Development/code/React/hoomieproject/src/images/pinkthanks.jpeg")',
-      },
     },
   },
   plugins: [],

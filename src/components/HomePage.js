@@ -40,7 +40,7 @@ function HomePage() {
       whileInView={"onscreen"}
       transition={{staggerChildren:0.5}}
         variants={homeAnimate} className="lg:w-[50em] w-[13em] flex flex-col lg:gap-6 gap-2">
-          <div className="lg:text-8xl text-2xl font-bold tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-transparent">
+          <div className="lg:text-8xl text-2xl pt-6 font-bold tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-transparent">
             Spring Sale!
           </div>
           <div className="lg:text-4xl text-xl">Get 35% off Sofas</div>
