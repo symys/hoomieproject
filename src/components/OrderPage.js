@@ -303,11 +303,11 @@ function OrderPage() {
           </div>
         </div>
 
-        <input
-          className="lg:text-2xl sm:text-xl text-sm font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2 hover:cursor-pointer text-center"
+        <button
+          className="lg:text-2xl sm:text-xl text-xs font-bold tracking-wider bg-gradient-to-r from-purple-400 to-blue-600 text-transparent text-white py-4 lg:px-10 px-2 rounded tracking-wider lg:mt-6 mt-2 hover:cursor-pointer text-center"
          type="submit"
-          value="Choose the payment method"
-        />
+          >Choose the payment method</button>
+        
       </form>
     </div>
   );

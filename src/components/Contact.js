@@ -37,7 +37,7 @@ function Contact() {
   return (
     <div className="lg:mt-10 pt-40 pb-40 items-center justify-center flex flex-col font-montserrat gap-4 p-2 bg-light2">
       <div className="lg:text-5xl text-3xl font-bold">Contact us</div>
-      <div className="lg:text-3xl text-xl font-medium">
+      <div className="lg:text-3xl text-xl font-medium pl-4 pr-4">
         We'd love to talk about how we can help you.
       </div>
       <div className="border rounded-xl p-4 lg:mt-10 sm:p-6 lg:p-8 dark:border-gray-700 shadow-lg bg-white">
