@@ -15,7 +15,7 @@ function ThankYouPage() {
   const propsData = location.state;
 
   return (
-    <div className="flex flex-col font-montserrat justify-center items-center h-screen bg-pinkbg bg-cover bg-center">
+    <div className="flex flex-col font-montserrat justify-center items-center h-screen bg-light2 bg-cover bg-center">
       <motion.div initial={"offscreen"}
           whileInView={"onscreen"}
           transition={{staggerChildren:0.1}} variants={thanksAnimate}  className="sm:text-3xl text-sm sm:p-20 p-10 m-2 mb-2 shadow-3xl rounded-[1em] font-bakbak tracking-wider bg-white opacity-70">
