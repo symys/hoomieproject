@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import support from "../images/support.png";
+// import support from "../images/support.png";
 // import setting from "../images/setting.png"
 import home from "../images/up-arrow.png";
 // import cartIcon from "../images/shopping-cart.png";
@@ -28,13 +28,13 @@ function Footer() {
             />
           </Link>
         </div>
-        <div>
+        {/* <div>
           <img
             src={support}
             alt="support"
             className="lg:hover:h-10 lg:h-8 h-6 duration-500 "
           />
-        </div>
+        </div> */}
 
         {/* <div>
             <img src={userIcon} alt="logout" className='lg:hover:h-10 lg:h-8 h-6 duration-500 '/>

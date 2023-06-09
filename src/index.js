@@ -8,11 +8,16 @@ import { store } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import ReduxToastr from "react-redux-toastr";
+import Kommunicate from "@kommunicate/kommunicate-chatbot-plugin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let persistor = persistStore(store);
 //redux persist localstorage resetlemek için asagidaki yapilir
 // persistor.purge();
+Kommunicate.init("3e9886febba0e5935d5403c20ab69591b", {
+  automaticChatOpenOnNavigation: true,
+  popupWidget: true
+});
 
 root.render(
   <React.StrictMode>
@@ -30,6 +35,7 @@ root.render(
           progressBar
           closeOnToastrClick={true}
         />
+        
       </PersistGate>
     </Provider>
   </React.StrictMode>
