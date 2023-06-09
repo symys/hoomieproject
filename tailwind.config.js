@@ -3,7 +3,6 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-     
       fontFamily: {
         montserrat: ["Montserrat"],
         lilita: ["Lilita One"],
@@ -22,7 +21,8 @@ module.exports = {
       backgroundImage: {
         landing:
           "url('/home/seymademir/Development/code/React/hoomieproject/src/images/landingPageBg.jpg')",
-          "pinkbg":'url("/home/seymademir/Development/code/React/hoomieproject/src/images/pinkthanks.jpeg")',
+        pinkbg:
+          'url("/home/seymademir/Development/code/React/hoomieproject/src/images/pinkthanks.jpeg")',
       },
     },
   },
