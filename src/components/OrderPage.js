@@ -63,7 +63,6 @@ function OrderPage() {
 
      setToggle(false)
       toastr.success("Delivery Address saved!")
-      // Diğer işlemleri burada gerçekleştirin
     },
   });
 
