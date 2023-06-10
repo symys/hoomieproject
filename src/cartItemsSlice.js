@@ -252,8 +252,8 @@ export const cartItemsSlice = createSlice({
         cartItems: [],
         totalPrice: 0}
         console.log(newState)
-        state = newState
-    //  return newState
+        // state = newState
+     return newState
     }
   },
 });
