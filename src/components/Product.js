@@ -120,9 +120,9 @@ function Product() {
         </div>
         <div className="flex lg:flex-row flex-col justify-evenly gap-10 pt-10">
           {products.allproducts.slice(2,6).map((product) => (
-            <div className="object-cover flex items-center hover:cursor-pointer shadow-2xl">
+            <div className="flex items-center hover:cursor-pointer shadow-2xl rounded-[1em] bg-light1 ">
               <Link state={product} to="/product">
-                <img src={product.img} alt="" className="rounded-[1em] object-cover object-center lg:w-[25em] w-[10em] lg:h-[25em] h-[10em] hover:scale-110 duration-500" />
+                <img src={product.img} alt="" className="rounded-[1em] object-cover object-center lg:w-[25em] w-[12em] lg:h-[25em] h-[12em] hover:scale-110 duration-500 " />
               </Link>
             </div>
           ))}

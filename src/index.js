@@ -13,7 +13,7 @@ import Kommunicate from "@kommunicate/kommunicate-chatbot-plugin";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let persistor = persistStore(store);
 //redux persist localstorage resetlemek için asagidaki yapilir
- persistor.purge();
+//  persistor.purge();
 Kommunicate.init("3e9886febba0e5935d5403c20ab69591b", {
   automaticChatOpenOnNavigation: true,
   popupWidget: true
