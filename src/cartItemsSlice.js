@@ -158,20 +158,12 @@ const initialState = {
   cartItem: 0,
   cartItems: [],
   totalPrice: 0,
-  // toppings: ['pepperoni'],
-  // gluten : true
 };
 
 export const cartItemsSlice = createSlice({
   name: "cartItems",
   initialState,
   reducers: {
-    // toggleGluten : (state) => {
-    //     state.gluten = !state.gluten
-    // },
-    // addTopping: (state, action) => {
-    //     state.toppings = [...state.toppings, action.payload]
-    // },
     onAdd: (state, action) => {
       //convert string to number to calculate total price
       const priceWithoutDollarSign = action.payload.price.slice(1);
@@ -242,9 +234,7 @@ export const cartItemsSlice = createSlice({
       state.cartItem = state.cartItem - exist.orderQuantity;
       state.totalPrice = state.totalPrice - (priceIntegerType*exist.orderQuantity);
       exist.orderQuantity = 0;
-      
-      
-            // console.log(exist);
+      // console.log(exist);
     },
     clearCart:(state) => {
       console.log(state)
