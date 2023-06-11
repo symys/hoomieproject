@@ -218,9 +218,9 @@ export const cartItemsSlice = createSlice({
       state.totalPrice = 0
       state.cartItems.splice(0, (state.cartItems.length) )
 
-      console.log(JSON.parse(JSON.stringify(state.cartItems)))
-      console.log(JSON.parse(JSON.stringify(state.cartItem)))
-      console.log(JSON.parse(JSON.stringify(state.totalPrice)))
+      // console.log(JSON.parse(JSON.stringify(state.cartItems)))
+      // console.log(JSON.parse(JSON.stringify(state.cartItem)))
+      // console.log(JSON.parse(JSON.stringify(state.totalPrice)))
     }
   },
 });
