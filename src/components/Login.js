@@ -43,9 +43,7 @@ function Login() {
         <div className="lg:text-5xl text-lg text-dark1 font-bold">
           Log in to your account
         </div>
-        <div className="lg:text-lg text-sm cursor-pointer underline text-blue-600">
-          <Link to="/register"> Don't have an account? </Link>
-        </div>
+       
       </div>
       <div className="flex flex-col lg:gap-6 gap-4 lg:w-[30em] w-[15em] font-montserrat lg:font-bold">
         <input
@@ -67,6 +65,9 @@ function Login() {
           </button>
         </div>
       </div>
+      <div className="lg:text-lg text-sm font-montserrat cursor-pointer underline text-blue-600">
+          <Link to="/register"> Don't have an account? </Link>
+        </div>
     </div>
   );
 }

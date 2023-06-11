@@ -54,14 +54,7 @@ function Register() {
         <div className="lg:text-5xl text-lg text-dark1 font-bold">
           Create an account
         </div>
-        <div className="lg:text-lg text-sm ">
-          Do you have an account?{" "}
-          <Link to="/login">
-            <span className="cursor-pointer underline text-blue-600">
-              Login
-            </span>{" "}
-          </Link>
-        </div>
+        
       </div>
       <div className="flex flex-col lg:gap-6 gap-4 lg:w-[30em] w-[15em] font-montserrat lg:font-bold">
         <input
@@ -83,6 +76,14 @@ function Register() {
           </button>
         </div>
       </div>
+      <div className="lg:text-lg text-sm font-montserrat text-center">
+          Do you have an account?{" "}
+          <Link to="/login">
+            <span className="cursor-pointer underline text-blue-600">
+              Login
+            </span>{" "}
+          </Link>
+        </div>
     </div>
   );
 }

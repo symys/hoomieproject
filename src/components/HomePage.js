@@ -25,20 +25,19 @@ const swiperAnimate = {
   },
 };
 
-
 function HomePage() {
   const furnitureImages = [VIMLE, EKOLSUND, JÄTTEBO];
 
   return (
-    <div 
-    
-    className="bg-light2 h-screen text-dark1 font-bakbak ">
-      <div 
-      className="flex lg:flex-row flex-col items-center self-center h-screen justify-evenly lg:pl-32 pl-16 lg:pr-32 lg:pt-0 pt-[20em]">
-        <motion.div initial={"offscreen"}
-      whileInView={"onscreen"}
-      transition={{staggerChildren:0.5}}
-        variants={homeAnimate} className="lg:w-[50em] sm:w-[30em] w-[13em] flex flex-col lg:gap-6 gap-2">
+    <div className="bg-light2 h-screen text-dark1 font-bakbak ">
+      <div className="flex lg:flex-row flex-col items-center self-center h-screen justify-evenly lg:pl-32 pl-16 lg:pr-32 lg:pt-0 pt-[20em]">
+        <motion.div
+          initial={"offscreen"}
+          whileInView={"onscreen"}
+          transition={{ staggerChildren: 0.5 }}
+          variants={homeAnimate}
+          className="lg:w-[50em] sm:w-[30em] w-[13em] flex flex-col lg:gap-6 gap-2"
+        >
           <div className="lg:text-8xl text-2xl sm:pt-0 pt-6 font-bold tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-transparent">
             Spring Sale!
           </div>
@@ -55,17 +54,20 @@ function HomePage() {
             </button>
           </div>
         </motion.div>
-        <motion.div initial={"offscreen"}
-      whileInView={"onscreen"}
-      transition={{staggerChildren:0.5}}
-        variants={swiperAnimate} className=" lg:w-[32em] w-[20em] pt-[3em]">
+        <motion.div
+          initial={"offscreen"}
+          whileInView={"onscreen"}
+          transition={{ staggerChildren: 0.5 }}
+          variants={swiperAnimate}
+         
+        >
           <Swiper
             effect="coverflow"
             grabCursor={true}
             modules={[Navigation, Autoplay]}
             centeredSlides={true}
             navigation={true}
-            className="lg:w-[32em] sm:w-[18em] w-[13em] rounded-[2em] shadow-2xl"
+            className="lg:w-[32em] sm:w-[18em] w-[13em] rounded-[2em] mt-10 shadow-2xl"
             // coverflowEffect={{
             //   rotate: 20,
             //   stretch: 0,

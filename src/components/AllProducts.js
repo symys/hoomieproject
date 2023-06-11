@@ -9,7 +9,7 @@ function AllProducts() {
   //sadece böyle yaparsam her butona tıkladığımda en yukarı atıyor.
   // window.scrollTo(0, 0);
   //onLoad sayesinde sayfa ilk yüklendiğin en üstten başlayacak.
-  window.onload = function () {
+  window.onload = () => {
     window.scrollTo(0, 0);
   };
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ function AllProducts() {
                 </h2>
                 <div class="flex sm:flex-row flex-col gap-2 items-center lg:justify-between justify-evenly pt-4">
                   <span class="lg:text-3xl text-lg font-bold text-gray-900 dark:text-white">
-                    {product.price}
+                   $ {product.price}
                   </span>
                   <button
                     onClick={() => {

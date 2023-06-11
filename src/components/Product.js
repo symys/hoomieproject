@@ -78,7 +78,7 @@ function Product() {
           </div>
           <div className="flex flex-col gap-2">
             <div className="lg:text-4xl text-lg font-bold tracking-widest lg:pt-12 pt-6">
-              {propsData.price}
+             $ {propsData.price}
             </div>
             <div className="lg:text-lg text-sm">
               or 10% off with <span className="font-bold">Bank</span>

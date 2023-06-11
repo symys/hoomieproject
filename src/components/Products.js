@@ -54,7 +54,7 @@ function Products() {
               </h2>
               <div class="flex sm:flex-row flex-col items-center lg:justify-between justify-evenly pt-4">
                 <span class="lg:text-3xl text-lg font-bold text-gray-900 dark:text-white">
-                  {product.price}
+                  $ {product.price}
                 </span>
                 <button
                   variants={cardAnimate}
