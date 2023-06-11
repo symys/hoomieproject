@@ -6,9 +6,7 @@ import { toastr } from 'react-redux-toastr';
 function ProductOfCartPage({ path, quantity, price, product }) {
   const dispatch = useDispatch();
 
-  const priceWithoutDollarSign = price.slice(1);
-  const priceIntegerType = parseInt(priceWithoutDollarSign);
-  const totalPrice = priceIntegerType * quantity;
+  const totalPrice = price * quantity;
 
   return (
     <div className="p-4 font-montserrat">
