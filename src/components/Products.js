@@ -34,7 +34,7 @@ function Products() {
             whileInView={"onscreen"}
             transition={{ staggerChildren: 0.5 }}
             variants={cardAnimate}
-            className=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[15em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            className=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
             <Link state={product} to="/product">
               <div className="place-self-center rounded-lg">
