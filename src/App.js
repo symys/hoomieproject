@@ -16,6 +16,7 @@ import Contact from './components/Contact';
 import ThankYouPage from './components/ThankYouPage';
 import CartPage from './components/CartPage';
 import OrderPage from './components/OrderPage';
+import Favorites from './components/Favorites';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path='/thankyou' element={<ThankYouPage/>} />
       <Route path='/cart' element={<CartPage />} />
       <Route path='/order' element={<OrderPage/>} />
+      <Route path='/favorites' element={<Favorites/>} />
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import seemore from "../images/seemoreBtn.png";
 import { useDispatch, useSelector } from "react-redux";
-import { onAdd } from "../cartItemsSlice.js";
+import {
+  onAdd,
+  handleHeartClick,
+} from "../cartItemsSlice.js";
 import { toastr } from "react-redux-toastr";
 import { motion } from "framer-motion";
 
@@ -17,6 +20,32 @@ const cardAnimate = {
 function Products() {
   const newProducts = useSelector((state) => state.cartItems);
   const dispatch = useDispatch();
+
+  // const handleMouseEnter = (index) => {
+  //   // const newHoverStates = [...hoverStates];
+  //   // newHoverStates[index] = true;
+  //   // setHoverStates(newHoverStates);
+  //   dispatch(handleMouseEnterance({ index: index}));
+  // };
+
+  // const handleMouseLeave = (index, clickStatus) => {
+  //   // const newHoverStates = [...hoverStates];
+  //   // newHoverStates[index] = false;
+  //   // setHoverStates(newHoverStates);
+  //   dispatch(handleMouseEnterance({ index: index}));
+  // };
+
+  const setHeartClicked = (productObj, index) => {
+    // const newHoverStates = [...isHeartClicked];
+    // newHoverStates[index] = !(newHoverStates[index]);
+    // setHeartClickStatus(newHoverStates);
+    dispatch(handleHeartClick(productObj));
+    // console.log("hello product from products component: " + JSON.stringify(productObj));
+    !(newProducts.allproducts[index].isHeartClicked)
+      ? toastr.info("Product added to favorites")
+      : toastr.warning("Product removed from favorites");
+  };
+
   return (
     <div
       className="text-dark1 font-bakbak lg:pl-32 pl-8 bg-light2 h-full lg:pt-32 pt-60"
@@ -28,7 +57,7 @@ function Products() {
         out.
       </div>
       <div className="flex sm:flex-row flex-col flex-wrap lg:gap-8 gap-4 lg:mt-10 mt-4 font-montserrat">
-        {newProducts.allproducts.slice(0, 7).map((product) => (
+        {newProducts.allproducts.slice(0, 7).map((product, index) => (
           <motion.div
             initial={"offscreen"}
             whileInView={"onscreen"}
@@ -36,15 +65,36 @@ function Products() {
             variants={cardAnimate}
             className=" hover:cursor-pointer flex flex-col w-full lg:max-w-[20em] max-w-[14em] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <Link state={product} to="/product">
-              <div className="place-self-center rounded-lg">
+            <div className="place-self-center rounded-lg relative">
+              <Link state={product} to="/product">
                 <img
                   class="p-8 object-cover object-center sm:w-[20em] w-[14em] sm:h-[20em] h-[14em] "
                   src={product.img}
                   alt={product.title}
                 />
+              </Link>
+              <div
+                key={product.id}
+                className="border-2 border-red-500 bg-white rounded-full flex items-center justify-center sm:h-10 sm:w-10 h-8 w-8 text-red-500  sm:text-3xl text-xl absolute top-10 text-center right-10"
+           
+                onClick={() =>
+                  setHeartClicked({
+                    id: product.id,
+                    orderQuantity: product.orderQuantity,
+                    name: product.name,
+                    img: product.img,
+                    title: product.title,
+                    price: product.price,
+                    hoverStates: product.hoverStates,
+                    isHeartClicked: product.isHeartClicked,
+                    heartClass: product.heartClass,
+                  }, index)
+                }
+              >
+                {product.isHeartClicked ? <ion-icon name="heart"></ion-icon> : <ion-icon name="heart-outline"></ion-icon>}
               </div>
-            </Link>
+            </div>
+
             <div class="px-5 pb-5">
               <h5 className="lg:text-xl text-base font-semibold tracking-tight text-gray-900 dark:text-white">
                 {product.title}
