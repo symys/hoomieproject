@@ -14,6 +14,7 @@ import ASVANG from "./images/lowimages/grayCouch.jpg";
 import AGOTNES from "./images/lowimages/pinksofa.jpg";
 import LÖNSET from "./images/lowimages/teakWoodSofa.jpg";
 import LYCKSELE from "./images/lowimages/greenWoodenSofa.jpg";
+import HOPPAS from "./images/lowimages/whiteSofa.jpg"
 
 const initialState = {
   allproducts: [
@@ -89,7 +90,7 @@ const initialState = {
       name: "Claret Red Sofa",
       img: NOLMYRA,
       title: "NOLMYRA",
-      price: 77,
+      price: 155,
       hoverStates: false,
       isHeartClicked: false,
       heartClass: "heart-outline",
@@ -100,7 +101,7 @@ const initialState = {
       name: "Bohemian Wicker Chair",
       img: FAMMARP,
       title: "FAMMARP",
-      price: 43,
+      price: 250,
       hoverStates: false,
       isHeartClicked: false,
       heartClass: "heart-outline",
@@ -111,7 +112,7 @@ const initialState = {
       name: "Brown Woven Chair",
       img: PARUP,
       title: "PARUP",
-      price: 43,
+      price: 175,
       hoverStates: false,
       isHeartClicked: false,
       heartClass: "heart-outline",
@@ -155,7 +156,7 @@ const initialState = {
       name: "Pink Sofa",
       img: AGOTNES,
       title: "AGOTNES",
-      price: 82,
+      price: 210,
       hoverStates: false,
       isHeartClicked: false,
       heartClass: "heart-outline",
@@ -182,6 +183,17 @@ const initialState = {
       isHeartClicked: false,
       heartClass: "heart-outline",
     },
+    {
+      id: 16,
+      orderQuantity: 0,
+      name: "Vintage White Sofa",
+      img: HOPPAS,
+      title: "HOPPAS",
+      price: 189,
+      hoverStates: false,
+      isHeartClicked: false,
+      heartClass: "heart-outline",
+    },
   ],
   cartItem: 0,
   cartItems: [],
@@ -201,7 +213,7 @@ export const cartItemsSlice = createSlice({
       state.cartItem += 1;
       state.totalPrice += preparedProduct.price;
 
-      var productIndex = state.cartItems.findIndex(
+      const productIndex = state.cartItems.findIndex(
         (item) => item.id === preparedProduct.id
       );
 
@@ -224,7 +236,7 @@ export const cartItemsSlice = createSlice({
       state.cartItem -= 1;
       state.totalPrice -= preparedProduct.price;
 
-      var productIndex = state.cartItems.findIndex(
+      const productIndex = state.cartItems.findIndex(
         (item) => item.id === preparedProduct.id
       );
 
@@ -244,7 +256,7 @@ export const cartItemsSlice = createSlice({
       const incomingProduct = action.payload;
       const preparedProduct = JSON.parse(JSON.stringify(incomingProduct));
 
-      var productIndex = state.cartItems.findIndex(
+      const productIndex = state.cartItems.findIndex(
         (item) => item.id === preparedProduct.id
       );
 
@@ -272,11 +284,11 @@ export const cartItemsSlice = createSlice({
       const newProduct = action.payload;
       const preparedProduct = JSON.parse(JSON.stringify(newProduct));
 
-      var productIndex = state.favorites.findIndex(
+      const productIndex = state.favorites.findIndex(
         (item) => item.id === preparedProduct.id
       );
 
-      var indexInAllProducts = state.allproducts.findIndex(
+      const indexInAllProducts = state.allproducts.findIndex(
         (item) => item.id === preparedProduct.id
       );
 

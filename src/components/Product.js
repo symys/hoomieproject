@@ -1,43 +1,9 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-// import LANDSKRONA from "../images/lowimages/vintageMiniChairandSofa.jpg";
-// import SÖDERHAMN from "../images/lowimages/orangeBoxFoamSofa.jpg";
-// import LINNEBÄCK from "../images/lowimages/grayPaddedChair.jpg";
-// import NOLMYRA from "../images/lowimages/claretRedSofa.jpg";
 import { toastr } from "react-redux-toastr";
 import { onAdd } from "../cartItemsSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import ReactStars from "react-stars";
-
-// const similarProducts = [
-//   {
-//     name: "Vintage Mini Chair Sofa",
-//     img: LANDSKRONA,
-//     title: "LANDSKRONA",
-//     price: "$92",
-//     star: "../images/4.png",
-//   },
-//   {
-//     name: "Orange Box Foam Sofa",
-//     img: SÖDERHAMN,
-//     title: "SÖDERHAMN",
-//     price: "$82",
-//     star: "../images/3.png",
-//   },
-//   {
-//     name: "Gray Padded Chair",
-//     img: LINNEBÄCK,
-//     title: "LINNEBÄCK",
-//     price: "$90",
-//     star: "../images/4.png",
-//   },
-//   {
-//     name: "Claret Red Sofa",
-//     img: NOLMYRA,
-//     title: "NOLMYRA",
-//     price: "$120",
-//     star: "../images/5.png",
-//   },]
 
 const ratingChanged = (newRating) => {
   console.log(newRating);
